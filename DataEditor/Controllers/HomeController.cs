@@ -13,18 +13,23 @@ namespace DataEditor.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult seting()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult list()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
+        public ActionResult serch()
+        {
+            return View();
+        }
+        public ActionResult Ajaxserch()
+        {
+            return PartialView();
+        }
+
     }
 }
