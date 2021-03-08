@@ -2,14 +2,42 @@
 @{
     ViewBag.Title = "seting";
     Layout = "~/Views/Shared/_Layout.cshtml";
+}@section style{
+    <style>
+       .alert-dismissible #close {
+            position: absolute ;
+            top: 5px ;
+            right: 0 ;
+            padding: 0; 
+            color: inherit ;
+        }
+       
+        #mainNav{
+            z-index: 1 ;
+        }
+       #alert-danger {
+            position: fixed ;
+            top: 10px ;
+            z-index: 2 ;
+            right: 0 ;
+        }
+    </style>
 }
+@if (Model.error)
+{
+    <div class="alert alert-danger alert-dismissible" id="alert-danger">
+        <button type="button" class="close" id="close" data-dismiss="alert">&times;</button>
+        <strong>خطا</strong> عملیات با موفقیت انجام نشد !
+    </div>
+}
+
 <div class="container d-flex justify-content-center align-items-center align-content-center justify-content-xl-center align-items-xl-center div-c" style="/*height: 83%;*/">
-    <form class="d-flex d-xl-flex flex-column justify-content-between col-12 col-md-8">
-        <div class="form-group text-center d-block"><label>گذرواژه</label><input class="form-control" type="password" required="" autocomplete="off" value="@Model.password"></div>
+    <form action="@Url.Action("seting")" method="post" class="d-flex d-xl-flex flex-column justify-content-between col-12 col-md-8">
+        <div class="form-group text-center d-block"><label>گذرواژه</label><input class="form-control" type="password" name="password" required="" autocomplete="off" value="@Model.password"></div>
         <div class="form-group d-block"><label>نام کاربری (sql)</label><input class="form-control" name="SqlUsername" type="text" required="" autocomplete="on" value="@Model.SqlUsername"></div>
-        <div class="form-group d-block"><label>گذرواژه (sql)<br></label><input class="form-control" type="password" required="" autocomplete="off" value="@Model.SqlPassword"></div>
-        <div class="form-group d-block"><label>سال مالی</label><input class="form-control" type="number" required="" value="@Model.FiscalYear"></div>
-        <div class="form-group d-block"><label>آدرس سرویس</label><input class="form-control" type="url" required="" autocomplete="on" inputmode="url" value="@Model.urlServises"><small class="form-text text-muted">مثال: https:mysite.com/api</small></div>
+        <div class="form-group d-block"><label>گذرواژه (sql)<br></label><input class="form-control" name="SqlPassword" type="password" required="" autocomplete="off" value="@Model.SqlPassword"></div>
+        <div class="form-group d-block"><label>سال مالی</label><input class="form-control" type="number" name="FiscalYear" required="" value="@Model.FiscalYear"></div>
+        <div class="form-group d-block"><label>آدرس سرویس</label><input class="form-control" type="url" name="urlServises" required="" autocomplete="on" inputmode="url" value="@Model.urlServises"><small class="form-text text-muted">مثال: https:mysite.com/api</small></div>
         <div class="submit"><button class="btn btn-secondary" type="submit">اتصال</button></div>
-    </form>
+     </form>
 </div>
