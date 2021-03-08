@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.IO;
+using Json;
 
 namespace DataEditor.Controllers
 {
@@ -45,7 +46,20 @@ namespace DataEditor.Controllers
         {
 
             try
-            { 
+            {
+                string path2 = Server.MapPath("~/App_Data/seting.txt");
+                using (StreamWriter writer = new StreamWriter(path2, true))
+                {
+                    string json =JsonConvert.SerializeObject(myseting);
+                    writer.Write(json);
+                    writer.Close();
+                }
+                using (StreamReader reader = new StreamReader(path2, true))
+                {
+
+                    var x4 = reader.ReadToEnd();
+
+                }
                 Settings.Default["SqlUsername"] = myseting.SqlUsername;
                 Settings.Default["SqlPassword"] = myseting.SqlPassword;
                 Settings.Default["FiscalYear"]  = myseting.FiscalYear;
@@ -79,24 +93,29 @@ namespace DataEditor.Controllers
         private void LogError(Exception ex)
         {
             string message = string.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
-            message += Environment.NewLine;
-            message += "-----------------------------------------------------------";
-            message += Environment.NewLine;
-            message += string.Format("Message: {0}", ex.Message);
-            message += Environment.NewLine;
-            message += string.Format("StackTrace: {0}", ex.StackTrace);
-            message += Environment.NewLine;
-            message += string.Format("Source: {0}", ex.Source);
-            message += Environment.NewLine;
-            message += string.Format("TargetSite: {0}", ex.TargetSite.ToString());
-            message += Environment.NewLine;
-            message += "-----------------------------------------------------------";
-            message += Environment.NewLine;
-            string path = Server.MapPath("~/ErrorLog/ErrorLog.txt");
+            message      += Environment.NewLine;
+            message      += "-----------------------------------------------------------";
+            message      += Environment.NewLine;
+            message      += string.Format("Message: {0}", ex.Message);
+            message      += Environment.NewLine;
+            message      += string.Format("StackTrace: {0}", ex.StackTrace);
+            message      += Environment.NewLine;
+            message      += string.Format("Source: {0}", ex.Source);
+            message      += Environment.NewLine;
+            message      += string.Format("TargetSite: {0}", ex.TargetSite.ToString());
+            message      += Environment.NewLine;
+            message      += "-----------------------------------------------------------";
+            message      += Environment.NewLine;
+            string path   = Server.MapPath("~/ErrorLog/ErrorLog.txt");
             using (StreamWriter writer = new StreamWriter(path, true))
             {
                 writer.WriteLine(message);
                 writer.Close();
+            }
+
+            using (StreamReader writer = new StreamReader(path, true))
+            {
+                var x = writer.ToString();
             }
         }
 

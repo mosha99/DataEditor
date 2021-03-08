@@ -1,1 +1,108 @@
-﻿
+﻿Time: 08/03/2021 03:15:24 PM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 54
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 03:18:01 PM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting)
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 03:21:05 PM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 54
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 03:43:06 PM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 61
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 03:47:25 PM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 62
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 03:48:15 PM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 62
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 03:48:46 PM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 62
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 03:49:16 PM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 62
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 04:15:45 PM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting)
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+

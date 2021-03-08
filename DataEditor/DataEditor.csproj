@@ -168,6 +168,7 @@
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\seting.txt" />
     <Content Include="assets\bootstrap\css\bootstrap.min.css" />
     <Content Include="assets\bootstrap\js\bootstrap.min.js" />
     <Content Include="assets\css\Footer-Dark.css" />
@@ -245,9 +246,7 @@
     <Content Include="Views\Home\list.cshtml" />
     <Content Include="Views\Home\error.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
