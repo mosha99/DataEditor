@@ -29,7 +29,6 @@ namespace DataEditor.Controllers
                     string Jsonstring = JsonText.ReadToEnd();
                     var serverSettings = JsonConvert.DeserializeObject<seting>(Jsonstring,
                     new JsonSerializerSettings());
-                    myseting.password    ="" ;
                     myseting.SqlUsername = serverSettings.SqlUsername;
                     myseting.SqlPassword = serverSettings.SqlPassword;
                     myseting.urlServises = serverSettings.urlServises;
@@ -66,7 +65,6 @@ namespace DataEditor.Controllers
                 {
                     //FileStream fileStream = new FileStream(path3, FileMode.Open, FileAccess.Write);
                     writer.Write("");
-                    myseting.password = null;
                     string json = JsonConvert.SerializeObject(myseting);
                     writer.Write(json);
                     writer.Close();
