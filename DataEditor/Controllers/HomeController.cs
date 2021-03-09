@@ -89,9 +89,16 @@ namespace DataEditor.Controllers
             {
                 try
                 {
-                    bool succes = testconection(myseting);
-                    ViewBag.testconection = "true";
-                    return View(myseting);
+                    string path3 = Server.MapPath("~/App_Data/seting.txt");
+                    using (StreamReader JsonText = new StreamReader(path3, true))
+                    {
+
+                        string Jsonstring = JsonText.ReadToEnd();
+                        var serverSettings = JsonConvert.DeserializeObject<seting>(Jsonstring,new JsonSerializerSettings());    
+                        bool succes = testconection(serverSettings);
+                        ViewBag.testconection = "true";
+                        return View(myseting);
+                    }
                 }
                 catch (Exception ex)
                 {

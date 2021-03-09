@@ -1,4 +1,4 @@
-﻿Time: 08/03/2021 11:05:34 AM
+﻿ Time: 08/03/2021 11:05:34 AM
 -----------------------------------------------------------
 Message: The current configuration system does not support user-scoped settings.
 StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
@@ -384,6 +384,24 @@ Time: 09/03/2021 08:14:59 PM
 Message: Invalid value FiscalYear for attribiot95
 StackTrace:    at DataEditor.Controllers.HomeController.testconection(seting myseting)
    at DataEditor.Controllers.HomeController.seting(seting myseting)
+Source: DataEditor
+TargetSite: Boolean testconection(DataEditor.Models.seting)
+-----------------------------------------------------------
+
+Time: 09/03/2021 08:26:49 PM
+-----------------------------------------------------------
+Message: Invalid value FiscalYear for attribiot95
+StackTrace:    at DataEditor.Controllers.HomeController.testconection(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 121
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 98
+Source: DataEditor
+TargetSite: Boolean testconection(DataEditor.Models.seting)
+-----------------------------------------------------------
+
+Time: 09/03/2021 08:41:51 PM
+-----------------------------------------------------------
+Message: Invalid value FiscalYear for attribiot95
+StackTrace:    at DataEditor.Controllers.HomeController.testconection(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 121
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 98
 Source: DataEditor
 TargetSite: Boolean testconection(DataEditor.Models.seting)
 -----------------------------------------------------------
