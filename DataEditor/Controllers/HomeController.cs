@@ -2,33 +2,42 @@
 using DataEditor.Properties;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Helpers;
 using System.Web.Mvc;
 using System.IO;
-using Json;
+using Newtonsoft.Json.Linq;
+using System.Web.Security;
 
 namespace DataEditor.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             return View();
         }
-
+        [Authorize]
         public ActionResult seting()
         {
             seting myseting = new seting();
             try
-            { 
-                myseting.password    = "";
-                myseting.SqlUsername = Properties.Settings.Default.SqlUsername;
-                myseting.SqlPassword = Properties.Settings.Default.SqlPassword;
-                myseting.urlServises = Properties.Settings.Default.urlServises;
-                myseting.FiscalYear  = Properties.Settings.Default.FiscalYear;
+            {
+                string path3 = Server.MapPath("~/App_Data/seting.txt");
+                using (StreamReader JsonText = new StreamReader(path3, true))
+                {
+
+                    string Jsonstring = JsonText.ReadToEnd();
+                    var serverSettings = JsonConvert.DeserializeObject<seting>(Jsonstring,
+                    new JsonSerializerSettings());
+                    myseting.password    ="" ;
+                    myseting.SqlUsername = serverSettings.SqlUsername;
+                    myseting.SqlPassword = serverSettings.SqlPassword;
+                    myseting.urlServises = serverSettings.urlServises;
+                    myseting.FiscalYear  = serverSettings.FiscalYear;                   
+                    //var x5 = JsonSerializer.Deserialize<seting>(x4);
+
+                }
+                
                 return View(myseting);
 
             }
@@ -41,43 +50,42 @@ namespace DataEditor.Controllers
 
 
 }
+        [Authorize]
         [HttpPost]
         public ActionResult seting(seting myseting)
         {
-
+           
             try
             {
-                string path2 = Server.MapPath("~/App_Data/seting.txt");
-                using (StreamWriter writer = new StreamWriter(path2, true))
+                string path3 = Server.MapPath("~/App_Data/seting.txt");
+                //FileStream file = new FileStream(path3, FileMode.Open);
+                System.IO.File.Delete(path3);
+                var s =System.IO.File.Exists(path3);
+                //System.IO.File.CreateText(path3);
+                using (StreamWriter writer = new StreamWriter(path3, true))
                 {
-                    string json =JsonConvert.SerializeObject(myseting);
+                    //FileStream fileStream = new FileStream(path3, FileMode.Open, FileAccess.Write);
+                    writer.Write("");
+                    myseting.password = null;
+                    string json = JsonConvert.SerializeObject(myseting);
                     writer.Write(json);
                     writer.Close();
                 }
-                using (StreamReader reader = new StreamReader(path2, true))
-                {
 
-                    var x4 = reader.ReadToEnd();
-
-                }
-                Settings.Default["SqlUsername"] = myseting.SqlUsername;
-                Settings.Default["SqlPassword"] = myseting.SqlPassword;
-                Settings.Default["FiscalYear"]  = myseting.FiscalYear;
-                Settings.Default["urlServises"] = myseting.urlServises;
-                /*Settings.Default.urlServises = "MyUserValue";*/
-                Properties.Settings.Default.Upgrade();
-                Properties.Settings.Default.Save();
-                myseting.error = false;
-                return View(myseting);
+                    myseting.error = false;
+                    ViewBag.succes = true;
+                    return View(myseting);
             }          
             catch (Exception ex)
             {
                 LogError(ex);
                 myseting.error = true;
+                ViewBag.succes = false;
                 return View(myseting);
             }
 
         }
+        [Authorize]
         public ActionResult list()
         {
             return View();
@@ -89,6 +97,33 @@ namespace DataEditor.Controllers
         public ActionResult Ajaxserch()
         {
             return PartialView();
+        }
+        public ActionResult login()
+        {
+            login log = new login();
+            log.url = Request.QueryString["ReturnUrl"];
+            return View(log);
+        }
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult login(login log)
+        {
+            string url = Request.QueryString["ReturnUrl"];
+            if (log.password != "password")
+            {
+                ViewBag.error = "true";
+                return View(log);
+            }
+            FormsAuthentication.SetAuthCookie("admin", true);
+            return Redirect(log.url);
+        }
+        public ActionResult logout()
+        {
+            if (User.Identity.IsAuthenticated != false)
+            {
+                FormsAuthentication.SignOut();
+            }
+            return Redirect("index");
         }
         private void LogError(Exception ex)
         {
@@ -118,6 +153,6 @@ namespace DataEditor.Controllers
                 var x = writer.ToString();
             }
         }
-
+        
     }
 }

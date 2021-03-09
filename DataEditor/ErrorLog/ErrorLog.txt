@@ -1,4 +1,4 @@
-﻿Time: 08/03/2021 03:15:24 PM
+﻿Time: 08/03/2021 11:05:34 AM
 -----------------------------------------------------------
 Message: The current configuration system does not support user-scoped settings.
 StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
@@ -10,7 +10,92 @@ Source: System
 TargetSite: System.String GetPreviousConfigFileName(Boolean)
 -----------------------------------------------------------
 
-Time: 08/03/2021 03:18:01 PM
+Time: 08/03/2021 11:31:35 AM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 54
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 11:32:59 AM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 54
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 11:38:11 AM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 54
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 11:44:48 AM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 54
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 11:46:13 AM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 54
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 11:50:16 AM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 54
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+Time: 08/03/2021 11:51:16 AM
+-----------------------------------------------------------
+Message: The current configuration system does not support user-scoped settings.
+StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
+   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.ApplicationSettingsBase.Upgrade()
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 54
+Source: System
+TargetSite: System.String GetPreviousConfigFileName(Boolean)
+-----------------------------------------------------------
+
+
+Time: 09/03/2021 12:46:52 PM
 -----------------------------------------------------------
 Message: The current configuration system does not support user-scoped settings.
 StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
@@ -22,87 +107,158 @@ Source: System
 TargetSite: System.String GetPreviousConfigFileName(Boolean)
 -----------------------------------------------------------
 
-Time: 08/03/2021 03:21:05 PM
+Time: 09/03/2021 12:46:56 PM
+-----------------------------------------------------------
+Message: Additional text encountered after finished reading JSON content: {. Path '', line 1, position 163.
+StackTrace:    at Newtonsoft.Json.JsonTextReader.ReadInternal()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at DataEditor.Controllers.HomeController.seting(seting myseting)
+Source: Newtonsoft.Json
+TargetSite: Boolean ReadInternal()
+-----------------------------------------------------------
+
+Time: 09/03/2021 12:47:40 PM
+-----------------------------------------------------------
+Message: Additional text encountered after finished reading JSON content: {. Path '', line 1, position 163.
+StackTrace:    at Newtonsoft.Json.JsonTextReader.ReadInternal()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at DataEditor.Controllers.HomeController.seting(seting myseting)
+Source: Newtonsoft.Json
+TargetSite: Boolean ReadInternal()
+-----------------------------------------------------------
+
+Time: 09/03/2021 12:51:16 PM
+-----------------------------------------------------------
+Message: Additional text encountered after finished reading JSON content: {. Path '', line 1, position 163.
+StackTrace:    at Newtonsoft.Json.JsonTextReader.ReadInternal()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at DataEditor.Controllers.HomeController.seting(seting myseting)
+Source: Newtonsoft.Json
+TargetSite: Boolean ReadInternal()
+-----------------------------------------------------------
+
+Time: 09/03/2021 12:51:35 PM
 -----------------------------------------------------------
 Message: The current configuration system does not support user-scoped settings.
 StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
    at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
    at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
    at System.Configuration.ApplicationSettingsBase.Upgrade()
-   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 54
+   at DataEditor.Controllers.HomeController.seting(seting myseting)
 Source: System
 TargetSite: System.String GetPreviousConfigFileName(Boolean)
 -----------------------------------------------------------
 
-Time: 08/03/2021 03:43:06 PM
+Time: 09/03/2021 01:39:34 PM
 -----------------------------------------------------------
-Message: The current configuration system does not support user-scoped settings.
-StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
-   at System.Configuration.ApplicationSettingsBase.Upgrade()
+Message: The process cannot access the file 'C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\App_Data\seting.txt' because it is being used by another process.
+StackTrace:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 60
+Source: mscorlib
+TargetSite: Void WinIOError(Int32, System.String)
+-----------------------------------------------------------
+
+Time: 09/03/2021 01:40:50 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\App_Data\seting.txt' because it is being used by another process.
+StackTrace:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at DataEditor.Controllers.HomeController.seting(seting myseting)
+Source: mscorlib
+TargetSite: Void WinIOError(Int32, System.String)
+-----------------------------------------------------------
+
+Time: 09/03/2021 01:59:45 PM
+-----------------------------------------------------------
+Message: Additional text encountered after finished reading JSON content: {. Path '', line 1, position 151.
+StackTrace:    at Newtonsoft.Json.JsonTextReader.ReadInternal()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at DataEditor.Controllers.HomeController.seting() in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 28
+Source: Newtonsoft.Json
+TargetSite: Boolean ReadInternal()
+-----------------------------------------------------------
+
+Time: 09/03/2021 02:00:04 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\App_Data\seting.txt' because it is being used by another process.
+StackTrace:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalWriteAllText(String path, String contents, Encoding encoding, Boolean checkHost)
+   at System.IO.File.WriteAllText(String path, String contents)
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 66
+Source: mscorlib
+TargetSite: Void WinIOError(Int32, System.String)
+-----------------------------------------------------------
+
+Time: 09/03/2021 02:03:59 PM
+-----------------------------------------------------------
+Message: Additional text encountered after finished reading JSON content: {. Path '', line 1, position 151.
+StackTrace:    at Newtonsoft.Json.JsonTextReader.ReadInternal()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at DataEditor.Controllers.HomeController.seting() in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 28
+Source: Newtonsoft.Json
+TargetSite: Boolean ReadInternal()
+-----------------------------------------------------------
+
+Time: 09/03/2021 02:04:10 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\App_Data\seting.txt' because it is being used by another process.
+StackTrace:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
    at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 61
-Source: System
-TargetSite: System.String GetPreviousConfigFileName(Boolean)
+Source: mscorlib
+TargetSite: Void WinIOError(Int32, System.String)
 -----------------------------------------------------------
 
-Time: 08/03/2021 03:47:25 PM
+Time: 09/03/2021 02:04:25 PM
 -----------------------------------------------------------
-Message: The current configuration system does not support user-scoped settings.
-StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
-   at System.Configuration.ApplicationSettingsBase.Upgrade()
-   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 62
-Source: System
-TargetSite: System.String GetPreviousConfigFileName(Boolean)
------------------------------------------------------------
-
-Time: 08/03/2021 03:48:15 PM
------------------------------------------------------------
-Message: The current configuration system does not support user-scoped settings.
-StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
-   at System.Configuration.ApplicationSettingsBase.Upgrade()
-   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 62
-Source: System
-TargetSite: System.String GetPreviousConfigFileName(Boolean)
+Message: The process cannot access the file 'C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\App_Data\seting.txt' because it is being used by another process.
+StackTrace:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalDelete(String path, Boolean checkHost)
+   at System.IO.File.Delete(String path)
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 59
+Source: mscorlib
+TargetSite: Void WinIOError(Int32, System.String)
 -----------------------------------------------------------
 
-Time: 08/03/2021 03:48:46 PM
+Time: 09/03/2021 02:04:29 PM
 -----------------------------------------------------------
-Message: The current configuration system does not support user-scoped settings.
-StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
-   at System.Configuration.ApplicationSettingsBase.Upgrade()
-   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 62
-Source: System
-TargetSite: System.String GetPreviousConfigFileName(Boolean)
------------------------------------------------------------
-
-Time: 08/03/2021 03:49:16 PM
------------------------------------------------------------
-Message: The current configuration system does not support user-scoped settings.
-StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
-   at System.Configuration.ApplicationSettingsBase.Upgrade()
-   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 62
-Source: System
-TargetSite: System.String GetPreviousConfigFileName(Boolean)
------------------------------------------------------------
-
-Time: 08/03/2021 04:15:45 PM
------------------------------------------------------------
-Message: The current configuration system does not support user-scoped settings.
-StackTrace:    at System.Configuration.LocalFileSettingsProvider.GetPreviousConfigFileName(Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties, Boolean isRoaming)
-   at System.Configuration.LocalFileSettingsProvider.Upgrade(SettingsContext context, SettingsPropertyCollection properties)
-   at System.Configuration.ApplicationSettingsBase.Upgrade()
-   at DataEditor.Controllers.HomeController.seting(seting myseting)
-Source: System
-TargetSite: System.String GetPreviousConfigFileName(Boolean)
+Message: The process cannot access the file 'C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\App_Data\seting.txt' because it is being used by another process.
+StackTrace:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalDelete(String path, Boolean checkHost)
+   at System.IO.File.Delete(String path)
+   at DataEditor.Controllers.HomeController.seting(seting myseting) in C:\Users\mosha\OneDrive\Desktop\mvc\DataEditor\DataEditor\Controllers\HomeController.cs:line 59
+Source: mscorlib
+TargetSite: Void WinIOError(Int32, System.String)
 -----------------------------------------------------------
 

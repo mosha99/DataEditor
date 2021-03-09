@@ -1,8 +1,10 @@
 ﻿@model DataEditor.Models.seting
 @{
-    ViewBag.Title = "seting";
+    ViewBag.Title = "تنظیمات";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}@section style{
+}
+@section title{تنظیمات}
+@section style{
     <style>
        .alert-dismissible #close {
             position: absolute ;
@@ -15,7 +17,7 @@
         #mainNav{
             z-index: 1 ;
         }
-       #alert-danger {
+       #alert-danger,#alert-success {
             position: fixed ;
             top: 10px ;
             z-index: 2 ;
@@ -28,6 +30,13 @@
     <div class="alert alert-danger alert-dismissible" id="alert-danger">
         <button type="button" class="close" id="close" data-dismiss="alert">&times;</button>
         <strong>خطا</strong> عملیات با موفقیت انجام نشد !
+    </div>
+}
+else if(ViewBag.succes!=null && ViewBag.succes)
+{
+    <div class="alert alert-success alert-dismissible" id="alert-success">
+        <button type="button" class="close" id="close" data-dismiss="alert">&times;</button>
+        <strong></strong> عملیات با موفقیت انجام شد !
     </div>
 }
 

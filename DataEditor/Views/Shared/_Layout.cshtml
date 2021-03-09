@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>@RenderSection("title", required: false)</title>
     <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/assets/css/vazir-black.css">
     <link rel="stylesheet" href="~/assets/css/vazir-bold.css">
@@ -33,7 +33,7 @@
                 <ul class="nav navbar-nav ml-auto" id="navbar-nav">
                     <li class="nav-item mx-0 mx-lg-1"></li>
                     <li class="nav-item mx-0 mx-lg-1"></li>
-                </ul><a class="nav-a l @RenderSection("list", required: false) "  href="@Url.Action("list")"><i class="fa fa-list-ul"></i>  لیست کالاها</a><a class="nav-a s @RenderSection("seting", required: false) "  href="@Url.Action("seting")"><i class="icon-settings"></i>  تنظیمات</a><a class="nav-a e @RenderSection("exit", required: false) "  href="#"><i class="icon ion-android-exit"></i>  خروج</a>
+                </ul><a class="nav-a l @RenderSection("list", required: false) "  href="@Url.Action("list")"><i class="fa fa-list-ul"></i>  لیست کالاها</a><a class="nav-a s @RenderSection("seting", required: false) "  href="@Url.Action("seting")"><i class="icon-settings"></i>  تنظیمات</a><a class="nav-a e @RenderSection("exit", required: false) "  href="@Url.Action("logout")"><i class="icon ion-android-exit"></i>  خروج</a>
             </div>
         </div>
     </nav>
