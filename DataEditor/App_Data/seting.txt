@@ -1,1 +1,1 @@
-{"password":null,"SqlUsername":"user","SqlPassword":"password","FiscalYear":99,"urlServises":"https://mysite.com/api","error":false}
+{"SqlUsername":"user","SqlPassword":"password","FiscalYear":95,"urlServises":"https://mysite.com/api","button":"save","error":false}

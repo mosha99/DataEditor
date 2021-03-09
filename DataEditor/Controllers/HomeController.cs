@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.IO;
 using Newtonsoft.Json.Linq;
 using System.Web.Security;
+using DataEditor.myClass;
 
 namespace DataEditor.Controllers
 {
@@ -36,7 +37,7 @@ namespace DataEditor.Controllers
                     //var x5 = JsonSerializer.Deserialize<seting>(x4);
 
                 }
-                
+                ViewBag.testconection = null;
                 return View(myseting);
 
             }
@@ -53,48 +54,67 @@ namespace DataEditor.Controllers
         [HttpPost]
         public ActionResult seting(seting myseting)
         {
-           
-            try
+            if (myseting.button == "save")
             {
-                string path3 = Server.MapPath("~/App_Data/seting.txt");
-                //FileStream file = new FileStream(path3, FileMode.Open);
-                System.IO.File.Delete(path3);
-                var s =System.IO.File.Exists(path3);
-                //System.IO.File.CreateText(path3);
-                using (StreamWriter writer = new StreamWriter(path3, true))
+
+
+                try
                 {
-                    //FileStream fileStream = new FileStream(path3, FileMode.Open, FileAccess.Write);
-                    writer.Write("");
-                    string json = JsonConvert.SerializeObject(myseting);
-                    writer.Write(json);
-                    writer.Close();
-                }
+                    string path3 = Server.MapPath("~/App_Data/seting.txt");
+                    //FileStream file = new FileStream(path3, FileMode.Open);
+                    System.IO.File.Delete(path3);
+                    var s = System.IO.File.Exists(path3);
+                    //System.IO.File.CreateText(path3);
+                    using (StreamWriter writer = new StreamWriter(path3, true))
+                    {
+                        //FileStream fileStream = new FileStream(path3, FileMode.Open, FileAccess.Write);
+                        writer.Write("");
+                        string json = JsonConvert.SerializeObject(myseting);
+                        writer.Write(json);
+                        writer.Close();
+                    }
 
                     myseting.error = false;
                     ViewBag.succes = true;
                     return View(myseting);
-            }          
-            catch (Exception ex)
+                }
+                catch (Exception ex)
+                {
+                    LogError(ex);
+                    myseting.error = true;
+                    ViewBag.succes = false;
+                    return View(myseting);
+                }
+            }else if(myseting.button == "test")
             {
-                LogError(ex);
-                myseting.error = true;
-                ViewBag.succes = false;
-                return View(myseting);
+                try
+                {
+                    bool succes = testconection(myseting);
+                    ViewBag.testconection = "true";
+                    return View(myseting);
+                }
+                catch (Exception ex)
+                {
+                    LogError(ex);
+                    ViewBag.testconection = "false";
+                    return View(myseting);
+                }
             }
-
+            return View(myseting);
         }
         [Authorize]
         public ActionResult list()
         {
             return View();
         }
-        public ActionResult serch()
+        public bool testconection (seting myseting)
         {
-            return View();
-        }
-        public ActionResult Ajaxserch()
-        {
-            return PartialView();
+            if (myseting.FiscalYear == 95)
+            {
+                throw new Exeptioncs("FiscalYear",myseting.FiscalYear.ToString());
+            } 
+            return false;
+
         }
         public ActionResult login()
         {
