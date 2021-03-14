@@ -10,6 +10,8 @@ using DataEditor.myClass;
 using System.Data.OleDb;
 using System.Data;
 using PagedList;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DataEditor.Controllers
 {
@@ -117,9 +119,26 @@ namespace DataEditor.Controllers
         public ActionResult list(int? page)
         {
             commoditys vlist = new commoditys();
-            var list =dataManagment.getall();
+            var list = dataManagment.getall();
+            List<filtercs> storlist = new List<filtercs>();
+            foreach (var item in list)
+            {
+                if (storlist.Where(d => d.stor_id == item.id_store).Count() == 0)
+                {
+                    storlist.Add(new filtercs { name = item.name_store, stor_id = item.id_store });
+                }
+                else
+                    if (item.name_store != null || item.name_store != "")
+                {
+                    if (storlist.Where(d => d.stor_id == item.id_store).ToList()[0].name == null || storlist.Where(c => c.stor_id == item.id_store).ToList()[0].name == "")
+                    {
+                        storlist.Where(c => c.stor_id == item.id_store).ToList()[0].name = item.name_store;
+                    }
+                }
+
+            }
             vlist.commoditys_list = list.ToPagedList(page ?? 1, 9);
-        
+            ViewBag.store = storlist;
             return View(vlist);
         }
         public bool testconection (seting myseting)
