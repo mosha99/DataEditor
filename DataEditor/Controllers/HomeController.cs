@@ -117,7 +117,9 @@ namespace DataEditor.Controllers
         }
         [Authorize]
         public ActionResult list(int? page)
-        {
+        {   
+            
+            var x=Request;
             commoditys vlist = new commoditys();
             var list = dataManagment.getall();
             List<filtercs> storlist = new List<filtercs>();
@@ -137,6 +139,16 @@ namespace DataEditor.Controllers
                 }
 
             }
+            if (Request.QueryString["store1"] != null || Request.QueryString["example"] != null)
+            {
+                string store = Request.QueryString["store1"];
+                string example = Request.QueryString["example"];
+                ViewBag.store1 = store;
+                ViewBag.example = example;
+                if(store!="all") list = list.Where(s => s.id_store.ToString() == store).ToList();
+                if(example == "on") list = list.Where(s => s.Amount > 0).ToList();
+            }
+
             vlist.commoditys_list = list.ToPagedList(page ?? 1, 9);
             ViewBag.store = storlist;
             return View(vlist);

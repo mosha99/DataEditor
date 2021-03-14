@@ -1,4 +1,5 @@
-﻿@model DataEditor.Models.commoditys
+﻿@model DataEditor.Models.commoditys 
+@using DataEditor.Models;
 @using PagedList.Mvc;
 
 @{
@@ -50,8 +51,85 @@
     justify-content: center;
     width: auto;
 }
+    #filter{
+        position:relative;
+        cursor:pointer;
+    }
+    #Dfilter {
+      position: fixed;
+      /*bottom: -60px;*/
+      direction: rtl;
+      background-color: rgb(44,62,80);
+      padding: 10px;
+    }
+    
+    .ff {
+      margin: 0 8px;
+    }
+    #dcf{
+        position:fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        display:flex;
+        background-color: #000000c7;
+        justify-content:center;
+        align-items:center;
+        z-index:6;
+    }
+    #selectf{
+        position:fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        z-index:7;
+    }
+    #Dfilter{
+        position:relative;
+        z-index:8;
+    }
+    #mainNav {
+    z-index: 5;
+}
     </style>
 }
+@section navitem{
+    <a class="nav-a l " id="filter"><i class="fa fa-filter filtr"></i>  لیست کالاها</a>
+}
+<div id="dcf">
+    <div id="selectf"></div>
+    <div class="" id="Dfilter" style="">
+        <form class="form-inline" action="@Url.Action("list")">
+            <select class="form-control ff" name="store1">
+
+                <option value="all" selected>همه انبار ها</option>
+                @if (ViewBag.store != null)
+            {
+                foreach (filtercs item in ViewBag.store)
+                {
+                    if (!string.IsNullOrWhiteSpace(item.name))
+                    {
+                            <option value="@item.stor_id">@item.name</option>
+                        }
+                        else
+                        {
+                            <option value="@item.stor_id">@item.stor_id</option>
+                        }
+                    }
+                }
+
+
+            </select>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="switch1" name="example">
+                <label class="custom-control-label" for="switch1">فقط کالای موجود</label>
+            </div>
+            <button class="btn btn-primary ff"  type="submit">اعمال</button>
+        </form>
+    </div>
+</div>
 <div class="container-lg d-flex justify-content-center align-items-center align-content-center justify-content-xl-center align-items-xl-center div-c" style="/*height: 83%;*/">
     <div class="table-responsive">
         <table class="table table-striped table-hover table-dark">
@@ -69,7 +147,7 @@
                 @foreach (var item in Model.commoditys_list)
                 {
                     <tr>
-                        <td>null</td>
+                        <td>@item.Amount</td>
                         <td>@item.SalePrice</td>
                         <td class="dfg">@item.name_store</td>
                         <td>@item.id_store</td>
@@ -84,7 +162,7 @@
         </table>
         <div id='Paging' style="text-align: center">
 
-            @Html.PagedListPager(Model.commoditys_list, page => Url.Action("list", new { page }))
+            @Html.PagedListPager(Model.commoditys_list, page => Url.Action("list", new { page,ViewBag.store1, ViewBag.example }))
         </div>
     </div>
 </div>
@@ -93,8 +171,21 @@
 @section scripts{
 <script src="~/assets/js/jquery-ui.min.js"></script>
     <script>
+        //alert("top:" + $("#filter").outerHeight() + ";")
         $(".pagination").children("li").addClass("page-item");
         $(".pagination").children("li").children("a").addClass("page-link");
+        $("#dcf").hide();
+        $("#filter").click(function () {
+            $("#dcf").show("blind", {}, 500, {});
+        })
+        $("#selectf").click(function () {
+            $("#dcf").hide("blind", {}, 500, {});
+        })
+        //function callback() {
+        //    setTimeout(function () {
+        //        $("#Dfilter:visible").removeAttr("style").fadeOut();
+        //    }, 1000);
+        //};
     </script>
     
     }

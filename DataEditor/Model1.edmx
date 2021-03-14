@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MasterSET2008Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MasterSET2008Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'MasterSET2008.dbo.ffo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ffo">
@@ -629,6 +629,7 @@ warning 6002: The table/view 'MasterSET2008.dbo.vw_Product' does not have a prim
           <Property Name="BuyPrice" Type="float" />
           <Property Name="SalePrice" Type="float" />
           <Property Name="UintName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'MasterSET2008.dbo.vw_Store' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1259,7 +1260,8 @@ warning 6002: The table/view 'MasterSET2008.dbo.wv_SaleList' does not have a pri
     [vw_Product].[name_store] AS [name_store], 
     [vw_Product].[BuyPrice] AS [BuyPrice], 
     [vw_Product].[SalePrice] AS [SalePrice], 
-    [vw_Product].[UintName] AS [UintName]
+    [vw_Product].[UintName] AS [UintName], 
+    [vw_Product].[Amount] AS [Amount]
     FROM [dbo].[vw_Product] AS [vw_Product]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vw_Store" EntityType="Self.vw_Store" store:Type="Views" store:Schema="dbo">
@@ -1315,8 +1317,7 @@ warning 6002: The table/view 'MasterSET2008.dbo.wv_SaleList' does not have a pri
     FROM [dbo].[wv_SaleList] AS [wv_SaleList]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MasterSET2008Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1918,6 +1919,7 @@ warning 6002: The table/view 'MasterSET2008.dbo.wv_SaleList' does not have a pri
           <Property Name="BuyPrice" Type="Double" />
           <Property Name="SalePrice" Type="Double" />
           <Property Name="UintName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Double" />
         </EntityType>
         <EntityType Name="vw_Store">
           <Key>
@@ -2583,6 +2585,7 @@ warning 6002: The table/view 'MasterSET2008.dbo.wv_SaleList' does not have a pri
           <EntitySetMapping Name="vw_Product">
             <EntityTypeMapping TypeName="MasterSET2008Model.vw_Product">
               <MappingFragment StoreEntitySet="vw_Product">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="Id_Year" ColumnName="Id_Year" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />

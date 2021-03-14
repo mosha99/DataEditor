@@ -44,6 +44,7 @@
                     <li class="nav-item mx-0 mx-lg-1"></li>
                     <li class="nav-item mx-0 mx-lg-1"></li>
                 </ul>
+                @RenderSection("navitem", required: false)
                 <a class="nav-a l @RenderSection("list", required: false) " href="@Url.Action("list")"><i class="fa fa-list-ul"></i>  لیست کالاها</a>
                 <a class="nav-a s @RenderSection("seting", required: false) " href="@Url.Action("seting")"><i class="icon-settings"></i>  تنظیمات</a>
                 <a class="nav-a e @RenderSection("exit", required: false) " href="@Url.Action("logout")"><i class="icon ion-android-exit"></i>  خروج</a>

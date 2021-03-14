@@ -22,5 +22,6 @@ namespace DataEditor
         public Nullable<double> BuyPrice { get; set; }
         public Nullable<double> SalePrice { get; set; }
         public string UintName { get; set; }
+        public Nullable<double> Amount { get; set; }
     }
 }
