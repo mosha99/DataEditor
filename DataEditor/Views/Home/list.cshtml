@@ -1,10 +1,57 @@
 ﻿@model DataEditor.Models.commoditys
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "لیست کالاها";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section title{لیست کالاها}
+@section style{
+    <style>
+        .page-link {
+        position: relative;
+        display: block;
+        padding: .5rem .75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #18bc9c;
+        background-color: #2c3e50;
+        border: 1px solid #2c3e50;
+        }
+        .page-item.disabled .page-link {
+        color: #868e96;
+        pointer-events: none;
+        cursor: auto;
+        background-color: #2c3e50;
+        border-color: #2c3e50;
+}
+        .page-item.active .page-link {
+    z-index: 0;
+    color: #fff;
+    background-color: #439484;
+    border-color: #439484;
+}
+        .page-item:last-child .page-link {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+        .page-item:first-child .page-link {
+    margin-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+        .pagination {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+    </style>
+}
 <div class="container-lg d-flex justify-content-center align-items-center align-content-center justify-content-xl-center align-items-xl-center div-c" style="/*height: 83%;*/">
     <div class="table-responsive">
         <table class="table table-striped table-hover table-dark">
@@ -19,27 +66,34 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Cell 1</td>
-                    <td>Cell 1.2</td>
-                    <td class="dfg">Cell 2</td>
-                    <td>Cell 3</td>
-                    <td>Cell 4</td>
-                    <td class="dfg">Cell 5</td>
-                </tr>
-                <tr>
-                    <td>Cell 1</td>
-                    <td>Cell 1.2</td>
-                    <td class="dfg">Cell 2</td>
-                    <td>Cell 3</td>
-                    <td>Cell 4</td>
-                    <td class="dfg">Cell 5</td>
-                </tr>
+                @foreach (var item in Model.commoditys_list)
+                {
+                    <tr>
+                        <td>null</td>
+                        <td>@item.SalePrice</td>
+                        <td class="dfg">@item.name_store</td>
+                        <td>@item.id_store</td>
+                        <td>@item.NAME</td>
+                        <td class="dfg">@item.id</td>
+                    </tr>
+                }
+
+
             </tbody>
+
         </table>
+        <div id='Paging' style="text-align: center">
+
+            @Html.PagedListPager(Model.commoditys_list, page => Url.Action("list", new { page }))
+        </div>
     </div>
 </div>
 @section footer{style="position:fixed;}
 @section list{active}
+@section scripts{
+    <script>
+        $(".pagination").children("li").addClass("page-item");
+        $(".pagination").children("li").children("a").addClass("page-link");
+    </script>
     
-     
+    }

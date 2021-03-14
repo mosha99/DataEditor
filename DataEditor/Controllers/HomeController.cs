@@ -7,6 +7,9 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using System.Web.Security;
 using DataEditor.myClass;
+using System.Data.OleDb;
+using System.Data;
+using PagedList;
 
 namespace DataEditor.Controllers
 {
@@ -54,6 +57,7 @@ namespace DataEditor.Controllers
         [HttpPost]
         public ActionResult seting(seting myseting)
         {
+            
             if (myseting.button == "save")
             {
 
@@ -110,9 +114,13 @@ namespace DataEditor.Controllers
             return View(myseting);
         }
         [Authorize]
-        public ActionResult list()
+        public ActionResult list(int? page)
         {
-            return View();
+            commoditys vlist = new commoditys();
+            var list =dataManagment.getall();
+            vlist.commoditys_list = list.ToPagedList(page ?? 1, 9);
+        
+            return View(vlist);
         }
         public bool testconection (seting myseting)
         {
@@ -149,6 +157,11 @@ namespace DataEditor.Controllers
                 FormsAuthentication.SignOut();
             }
             return Redirect("index");
+        }
+        public ActionResult dbacsses()
+        {
+
+            return View();
         }
         private void LogError(Exception ex)
         {

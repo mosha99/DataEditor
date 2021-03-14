@@ -7,11 +7,14 @@ namespace DataEditor.Models
 {
     public class commodity
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public int id_Store { get; set; }
-        public string name_Store { get; set; }
-        public int Price { get; set; }
-        public int Inventory { get; set; }
+        public int Id_Year { get; set; }
+        public double id { get; set; }
+        public string NAME { get; set; }
+        public Nullable<double> id_store { get; set; }
+        public string name_store { get; set; }
+        public Nullable<double> BuyPrice { get; set; }
+        public Nullable<double> SalePrice { get; set; }
+        public string UintName { get; set; }
+
     }
 }
