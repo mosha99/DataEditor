@@ -26,6 +26,7 @@ namespace DataEditor.Controllers
         
         public ActionResult Index()
         {
+            ViewBag.Authenticated = User.Identity.IsAuthenticated;
             return View();
         }
         [Authorize]

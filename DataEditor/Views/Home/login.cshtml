@@ -5,6 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section title{ورود}
+@section style{
+    <style>
+        .footer-dark {
+    position: fixed !important;
+    bottom: 0;
+}
+    </style>
+    }
+
 <h2 style="text-align:center;">ورود</h2>
 <div class="container d-flex justify-content-center align-items-center align-content-center justify-content-xl-center align-items-xl-center div-c" style="/*height: 83%;*/">
     <form action="@Url.Action("login")" method="post" class="d-flex d-xl-flex flex-column justify-content-between col-12 col-md-8">
