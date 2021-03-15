@@ -15,6 +15,12 @@ using System.Linq;
 
 namespace DataEditor.Controllers
 {
+
+    public static class selectlist
+    {
+        public static List<vw_Product>  list;
+
+    }
     public class HomeController : Controller
     {
         
@@ -148,7 +154,8 @@ namespace DataEditor.Controllers
                 if(store!="all") list = list.Where(s => s.id_store.ToString() == store).ToList();
                 if(example == "on") list = list.Where(s => s.Amount > 0).ToList();
             }
-
+            selectlist.list = null;
+            selectlist.list = list;
             vlist.commoditys_list = list.ToPagedList(page ?? 1, 9);
             ViewBag.store = storlist;
             return View(vlist);
