@@ -104,6 +104,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -112,6 +116,14 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -174,7 +186,48 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CRM_CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="crm.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crm.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="crm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="crm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crm.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CRM_Agreement.cs">
+      <DependentUpon>crm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRM_Company.cs">
+      <DependentUpon>crm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRM_Customer.cs">
+      <DependentUpon>crm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRM_Discount.cs">
+      <DependentUpon>crm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRM_log.cs">
+      <DependentUpon>crm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRM_Setting.cs">
+      <DependentUpon>crm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRM_SMSSender.cs">
+      <DependentUpon>crm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_info.cs">
+      <DependentUpon>crm.tt</DependentUpon>
+    </Compile>
     <Compile Include="ffo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -189,6 +242,9 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="karbar.cs">
+      <DependentUpon>crm.tt</DependentUpon>
     </Compile>
     <Compile Include="mfo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -213,10 +269,13 @@
     </Compile>
     <Compile Include="Models\commoditys.cs" />
     <Compile Include="Models\commodity.cs" />
+    <Compile Include="Models\crm.cs" />
+    <Compile Include="Models\crmList.cs" />
     <Compile Include="Models\filtercs.cs" />
     <Compile Include="Models\Iseting.cs" />
     <Compile Include="Models\login.cs" />
     <Compile Include="Models\seting.cs" />
+    <Compile Include="myClass\crmManagment.cs" />
     <Compile Include="myClass\dataManagment.cs" />
     <Compile Include="myClass\Exeptioncs.cs" />
     <Compile Include="pfa.cs">
@@ -233,7 +292,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SalMaly.cs">
+      <DependentUpon>crm.tt</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="SHerkat.cs">
+      <DependentUpon>crm.tt</DependentUpon>
+    </Compile>
     <Compile Include="vw_Buy.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -430,6 +495,16 @@
     <Content Include="Content\themes\basic\assets\fonts\icons.svg" />
     <Content Include="Content\themes\default\assets\fonts\icons.svg" />
     <Content Include="Content\themes\default\assets\images\flags.png" />
+    <Content Include="crm.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>crm.edmx</DependentUpon>
+      <LastGenOutput>crm.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="crm.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>crm.edmx</DependentUpon>
+      <LastGenOutput>crm.cs</LastGenOutput>
+    </Content>
     <Content Include="ErrorLog\ErrorLog.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -483,6 +558,13 @@
     <Content Include="Content\themes\basic\assets\fonts\icons.woff" />
     <Content Include="Content\themes\basic\assets\fonts\icons.ttf" />
     <Content Include="Content\themes\basic\assets\fonts\icons.eot" />
+    <EntityDeploy Include="crm.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>crm.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="crm.edmx.diagram">
+      <DependentUpon>crm.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -518,6 +600,8 @@
     <Content Include="Views\Home\error.cshtml" />
     <Content Include="Views\Home\login.cshtml" />
     <Content Include="Views\Home\list.cshtml" />
+    <Content Include="Views\Home\addCRM.cshtml" />
+    <Content Include="Views\Home\serchCRM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

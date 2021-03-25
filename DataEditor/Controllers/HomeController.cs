@@ -202,6 +202,31 @@ namespace DataEditor.Controllers
 
             return View();
         }
+        public ActionResult addCRM()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult addCRM(crm Crm)
+        {
+            bool f=crmManagment.add(Crm);
+            return View();
+        }
+        public ActionResult serchCRM(int?page,string serch)
+        {
+            crmList list = new crmList();
+            List<crm> Lcrm = new List<crm>();
+            if (string.IsNullOrEmpty(serch))
+            {
+                Lcrm = crmManagment.get();
+            }
+            else
+            {
+                Lcrm = crmManagment.get(serch);
+            }
+            list.list= Lcrm.ToPagedList(page ?? 1, 9);
+            return View(list);
+        }
         private void LogError(Exception ex)
         {
             string message = string.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
@@ -229,7 +254,7 @@ namespace DataEditor.Controllers
             {
                 var x = writer.ToString();
             }
-        }
-        
+           
+        } 
     }
 }
