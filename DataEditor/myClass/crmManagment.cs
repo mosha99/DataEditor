@@ -20,8 +20,8 @@ namespace DataEditor.myClass
                 {
                     Id = item.id,
                     Name = item.NAME,
-                    Number = Convert.ToInt32(item.MOBIL),
-                    NationalCode = Convert.ToInt32(item.CodeMelli),
+                    Number = item.MOBIL,
+                    NationalCode = item.CodeMelli,
                 });
                 
             }
@@ -38,53 +38,19 @@ namespace DataEditor.myClass
         {
             try
             {
-                dbcrm.CRM_Customer.Add(new CRM_Customer {
+                Random rand = new Random();
+                var x = dbcrm.CRM_Customer.ToList();
+                dbcrm.CRM_Customer.Add(new CRM_Customer
+                {
                     NAME = Crm.Name,
-                    MOBIL = Crm.Number.ToString(),
-                    CodeMelli = Crm.NationalCode.ToString(),
-                    /*SHS_ID = 0,
-                    CRM_log=1,
-                    SalMaly=1,
-                    CRM_SMSSender=1,*/
-                    SendSMS        =false,
-                    Lottery        =false,
-                    SEX            =0,
-                    TAHOL          =0,
-                    ID_Company     =0,
-                    Mos_id         =0,
-                    CartKind       ="null2",
-                    SHO            ="null2",
-                    ADR            ="null2",
-                    FAX            ="null2",
-                    TOZIH          ="null2",
-                    cod_Eshterak   ="null2",               
-                    tar_tavalod    ="null2",
-                    city           ="null2",
-                    pas            ="null2",
-                    tar_ez         ="null2",
-                    mail           ="null2",
-                    job            ="null2",
-                    adder          ="null2",
-                    editor         ="null2",
-                    tar_s          ="null2",
-                    FATHER         ="null2",
-                    SCODE          ="null2",
-                    HOMEPHONE      ="null2",
-                    NAMEL          ="null2",
-                    SSTNDRDCODE    ="null2",
-                    SODOR          ="null2",
-                    HOMECODE       ="null2",
-                    WORKCODE       ="null2",
-                    WORKADDR       ="null2",
-                    WORKPHONE      ="null2",
-                    bincart        ="null2",
-                    binEXPDATE     ="null2",
-                    binCVV2        ="null2",
-                    tar_edit       ="null2",
-                    tar_kasian_d   ="null2",
-                    tar_kasian_t   ="null2",
-
+                    MOBIL = Crm.Number,
+                    CodeMelli = Crm.NationalCode,
+                    SHS_ID = rand.Next(),
+                    CartKind = "اشتراک",
+                    Lottery=false,
+                    Mos_id=0
                 });
+                var y = dbcrm.CRM_Customer.ToList();
                 dbcrm.SaveChanges();
                 return true;
             }

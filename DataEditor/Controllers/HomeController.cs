@@ -204,16 +204,34 @@ namespace DataEditor.Controllers
         }
         public ActionResult addCRM()
         {
+            ViewBag.error = false;
+            ViewBag.succes = false;
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult addCRM(crm Crm)
         {
-            bool f=crmManagment.add(Crm);
+            bool f;
+            if (ModelState.IsValid)
+            {
+                 f=crmManagment.add(Crm);
+            }
+            else
+            {
+                f = false;
+            }
+            
+            ViewBag.error = !f;
+            ViewBag.succes = f;
             return View();
         }
         public ActionResult serchCRM(int?page,string serch)
         {
+            if (!string.IsNullOrEmpty(serch))
+            {
+                ViewBag.serch = serch;
+            }
             crmList list = new crmList();
             List<crm> Lcrm = new List<crm>();
             if (string.IsNullOrEmpty(serch))
@@ -227,6 +245,7 @@ namespace DataEditor.Controllers
             list.list= Lcrm.ToPagedList(page ?? 1, 9);
             return View(list);
         }
+
         private void LogError(Exception ex)
         {
             string message = string.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));

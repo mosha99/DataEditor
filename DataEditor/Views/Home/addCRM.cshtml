@@ -26,7 +26,30 @@
             margin-bottom: -6px;
             margin-top: 35px;
         }
+        #alert-danger, #alert-success {
+            position: fixed;
+            top: 10px;
+            z-index: 1042;
+            right: 0;
+        }
+        .close{
+                 padding: 5px;
+         }
     </style>
+}
+@if (ViewBag.error)
+{
+    <div class="alert alert-danger alert-dismissible" id="alert-danger">
+        <button type="button" class="close" id="close" data-dismiss="alert">&times;</button>
+        <strong>خطا</strong> ذخیره اطلاعات با موفقیت انجام نشد !
+    </div>
+}
+@if (ViewBag.succes)
+{
+    <div class="alert alert-success alert-dismissible" id="alert-success">
+        <button type="button" class="close" id="close" data-dismiss="alert">&times;</button>
+        <strong></strong> ذخیره اطلاعات با موفقیت انجام شد !
+    </div>
 }
 <h2>اضافه کردنcrm</h2>
 <div class="container d-flex justify-content-center align-items-center align-content-center justify-content-xl-center align-items-xl-center div-c" style="/*height: 83%;*/">

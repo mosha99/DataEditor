@@ -9,11 +9,25 @@ namespace DataEditor.Models
     public class crm
     {
         public int Id { get;  set; }
+
         [Display(Name ="نام")]
+        [Required(ErrorMessage ="این فیلد اجباری است")]
         public string Name { get; set; }
+
+
         [Display(Name ="شماره تلفن")]
-        public int Number { get; set; }
+        [Required(ErrorMessage ="این فیلد اجباری است")]
+        [MaxLength(11,ErrorMessage ="شماره معتبر وارد نمایید")]
+        [MinLength(11,ErrorMessage = "شماره معتبر وارد نمایید")]
+        [RegularExpression("^([0-9]){11}$", ErrorMessage = "شماره معتبر وارد نمایید")]
+        public string Number { get; set; }
+
+
         [Display(Name ="کدملی")]
-        public int NationalCode { get; set; }
+        [Required(ErrorMessage ="این فیلد اجباری است")]
+        [MaxLength(10, ErrorMessage = "کد ملی معتبر وارد نمایید")]
+        [MinLength(10, ErrorMessage = "کد ملی معتبر وارد نمایید")]
+        [RegularExpression("^([0-9]){10}$", ErrorMessage ="کد ملی معتبر وارد نمایید")]
+        public string NationalCode { get; set; }
     }
 }
