@@ -1,4 +1,6 @@
-﻿using DataEditor.Models;
+﻿using DataEditor.Controllers;
+using DataEditor.ErrorLog;
+using DataEditor.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,55 +14,89 @@ namespace DataEditor.myClass
         public static List<crm> get()
         {
             List<crm> Lcrm = new List<crm>();
-            
-            foreach(var item in dbcrm.CRM_Customer)
+            try
             {
-
-                Lcrm.Add(new crm
+                foreach (var item in dbcrm.CRM_Customer)
                 {
-                    Id = item.id,
-                    Name = item.NAME,
-                    Number = item.MOBIL,
-                    NationalCode = item.CodeMelli,
-                });
-                
+
+                    Lcrm.Add(new crm
+                    {
+                        Id = item.id,
+                        Name = item.NAME,
+                        Number = item.MOBIL,
+                        NationalCode = item.CodeMelli,
+                    });
+
+                }
             }
+            catch
+            {
+                foreach (var item in dbcrm.CRM_Customer)
+                {
+
+                    Lcrm.Add(new crm
+                    {
+                        Id = item.id,
+                        Name = item.NAME,
+                        Number = item.MOBIL,
+                        NationalCode = item.CodeMelli,
+                    });
+
+                }
+            }
+            
             return Lcrm;
         }
         public static List<crm> get(string serch)
         {
           List<crm> Lcrm = new List<crm>();
-          Lcrm= get();
-          Lcrm = Lcrm.Where(x => x.Name == serch||x.NationalCode.ToString()== serch||x.Number.ToString()== serch).ToList();
+          Lcrm = get();
+          Lcrm = Lcrm.Where(x => x.Name.Contains(serch) ||x.NationalCode.ToString().Contains(serch)|| x.Number.ToString().Contains(serch)).ToList();
           return Lcrm;
         }
-        public static bool add(crm Crm)
+        public static bool add(crm Crm,string path)
         {
             try
             {
-                Random rand = new Random();
-                var x = dbcrm.CRM_Customer.ToList();
-                dbcrm.CRM_Customer.Add(new CRM_Customer
-                {
-                    NAME = Crm.Name,
-                    MOBIL = Crm.Number,
-                    CodeMelli = Crm.NationalCode,
-                    SHS_ID = rand.Next(),
-                    CartKind = "اشتراک",
-                    Lottery=false,
-                    Mos_id=0
-                });
-                var y = dbcrm.CRM_Customer.ToList();
+                var db=dbcrm.CRM_Customer.OrderBy(x => x.id).ToList();
+                var ob = new CRM_Customer();
+
+                ob.id = db.Last().id + 1;
+                ob.NAME = Crm.Name;
+                ob.MOBIL = Crm.Number;
+                ob.CodeMelli = Crm.NationalCode;
+                ob.SHS_ID = 32906515;
+                ob.cod_Eshterak = ob.id.ToString();
+                ob.CartKind = "اشتراک";
+                ob.Mos_id = 0;
+                ob.Lottery = false;
+                    //SalMaly=dbcrm.SalMalies.FirstOrDefault(y=>y.SHS_ID==0)
+                
+                dbcrm.CRM_Customer.Add(ob);
                 dbcrm.SaveChanges();
                 return true;
             }
 
-            catch (Exception error)
-
+                catch (Exception error)
             {
+                errors.LogError(error, path);
                 return false;
-
             }
+        }
+        public static bool delete(int id, string path)
+        {
+            try
+            {
+                dbcrm.CRM_Customer.Remove(dbcrm.CRM_Customer.FirstOrDefault(x => x.id == id));
+                dbcrm.SaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                errors.LogError(ex, path);
+                return false;
+            }
+            
         }
     }
 }

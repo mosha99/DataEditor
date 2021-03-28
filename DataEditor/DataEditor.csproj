@@ -228,6 +228,7 @@
     <Compile Include="db_info.cs">
       <DependentUpon>crm.tt</DependentUpon>
     </Compile>
+    <Compile Include="ErrorLog\errors.cs" />
     <Compile Include="ffo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

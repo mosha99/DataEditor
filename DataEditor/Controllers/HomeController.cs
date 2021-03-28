@@ -12,18 +12,50 @@ using System.Data;
 using PagedList;
 using System.Collections.Generic;
 using System.Linq;
+using DataEditor.ErrorLog;
 
 namespace DataEditor.Controllers
 {
 
+
     public static class selectlist
     {
-        public static List<vw_Product>  list;
+        public static List<vw_Product> list;
+
+    }
+    public static class query
+    {
+        private static crmList list ;
+        private static bool succes ;
+        private static string serch ;
+        public static void set(crmList input,string _serch ,bool _succes)
+        {
+            serch = _serch;
+            succes = _succes;
+            list = input;
+        }
+        public static crmList get()
+        {
+           return list;
+        }
+        public static bool getb()
+        {
+            return succes;
+        }
+        public static string gets()
+        {
+            return serch;
+        }
 
     }
     public class HomeController : Controller
     {
-        
+        public  string getpath()
+        {
+            string path=Server.MapPath("~/ErrorLog/ErrorLog.txt");
+            return path;
+        }
+
         public ActionResult Index()
         {
             ViewBag.Authenticated = User.Identity.IsAuthenticated;
@@ -55,7 +87,7 @@ namespace DataEditor.Controllers
             }
             catch (Exception ex)
             {
-                LogError(ex);
+                errors.LogError(ex, getpath());
                 return View(myseting);
             }
 
@@ -93,7 +125,7 @@ namespace DataEditor.Controllers
                 }
                 catch (Exception ex)
                 {
-                    LogError(ex);
+                    errors.LogError(ex, getpath());
                     myseting.error = true;
                     ViewBag.succes = false;
                     return View(myseting);
@@ -115,7 +147,7 @@ namespace DataEditor.Controllers
                 }
                 catch (Exception ex)
                 {
-                    LogError(ex);
+                    errors.LogError(ex, getpath());
                     ViewBag.testconection = "false";
                     return View(myseting);
                 }
@@ -202,20 +234,23 @@ namespace DataEditor.Controllers
 
             return View();
         }
+        [Authorize]
         public ActionResult addCRM()
         {
+
             ViewBag.error = false;
             ViewBag.succes = false;
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult addCRM(crm Crm)
         {
             bool f;
             if (ModelState.IsValid)
             {
-                 f=crmManagment.add(Crm);
+                 f=crmManagment.add(Crm,getpath());
             }
             else
             {
@@ -226,8 +261,56 @@ namespace DataEditor.Controllers
             ViewBag.succes = f;
             return View();
         }
+        [Authorize]
         public ActionResult serchCRM(int?page,string serch)
         {
+            crmList list = new crmList();
+            if (query.get() == null)
+            {
+                ViewBag.succes = false;
+                ViewBag.error = false;
+
+                if (page == null)
+                {
+                    ViewBag.page = 1;
+                }
+                else
+                {
+                    ViewBag.page = page;
+                }
+                if (!string.IsNullOrEmpty(serch))
+                {
+                    ViewBag.serch = serch;
+                }
+                
+                List<crm> Lcrm = new List<crm>();
+                if (string.IsNullOrEmpty(serch))
+                {
+                    Lcrm = crmManagment.get();
+                }
+                else
+                {
+                    Lcrm = crmManagment.get(serch);
+                }
+                list.list = Lcrm.ToPagedList(page ?? 1, 6);
+
+            }
+            else
+            {
+                list = query.get();
+                ViewBag.serch = query.gets();
+                ViewBag.succes = query.getb();
+                ViewBag.error = !query.getb();
+                query.set(null, null, false);
+            }
+                return View(list);
+        }
+        [Authorize]
+        public ActionResult deletCrm(int?page,int id,string serch)
+        {
+            bool succes=crmManagment.delete(id,getpath());
+            ViewBag.succes = succes;
+            ViewBag.error = !succes;
             if (!string.IsNullOrEmpty(serch))
             {
                 ViewBag.serch = serch;
@@ -242,38 +325,10 @@ namespace DataEditor.Controllers
             {
                 Lcrm = crmManagment.get(serch);
             }
-            list.list= Lcrm.ToPagedList(page ?? 1, 9);
-            return View(list);
+            list.list = Lcrm.ToPagedList(page ?? 1, 9);
+            query.set(list,serch,succes);
+            return Redirect("serchCRM");
         }
-
-        private void LogError(Exception ex)
-        {
-            string message = string.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
-            message      += Environment.NewLine;
-            message      += "-----------------------------------------------------------";
-            message      += Environment.NewLine;
-            message      += string.Format("Message: {0}", ex.Message);
-            message      += Environment.NewLine;
-            message      += string.Format("StackTrace: {0}", ex.StackTrace);
-            message      += Environment.NewLine;
-            message      += string.Format("Source: {0}", ex.Source);
-            message      += Environment.NewLine;
-            message      += string.Format("TargetSite: {0}", ex.TargetSite.ToString());
-            message      += Environment.NewLine;
-            message      += "-----------------------------------------------------------";
-            message      += Environment.NewLine;
-            string path   = Server.MapPath("~/ErrorLog/ErrorLog.txt");
-            using (StreamWriter writer = new StreamWriter(path, true))
-            {
-                writer.WriteLine(message);
-                writer.Close();
-            }
-
-            using (StreamReader writer = new StreamReader(path, true))
-            {
-                var x = writer.ToString();
-            }
-           
-        } 
+        
     }
 }

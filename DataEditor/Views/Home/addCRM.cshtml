@@ -26,15 +26,26 @@
             margin-bottom: -6px;
             margin-top: 35px;
         }
+        .alert-dismissible #close {
+            position: absolute ;
+            top: 5px ;
+            right: 0 ;
+            padding: 0; 
+            color: inherit ;
+        }
         #alert-danger, #alert-success {
             position: fixed;
             top: 10px;
             z-index: 1042;
             right: 0;
         }
+        #mainNav {
+            z-index: 1;
+        }
         .close{
                  padding: 5px;
          }
+
     </style>
 }
 @if (ViewBag.error)
