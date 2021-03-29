@@ -1,6 +1,7 @@
 ﻿using DataEditor.Controllers;
 using DataEditor.ErrorLog;
 using DataEditor.Models;
+using DataEditor.data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,8 @@ namespace DataEditor.myClass
 {
     public static class crmManagment
     {
-        static CRM2008 dbcrm = new CRM2008();
+        
+        static CRM2008Entities dbcrm = new CRM2008Entities();
         public static List<crm> get()
         {
             List<crm> Lcrm = new List<crm>();

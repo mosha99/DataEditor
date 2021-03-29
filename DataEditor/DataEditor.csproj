@@ -52,10 +52,6 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="JetEntityFrameworkProvider, Version=6.0.0.0, Culture=neutral, PublicKeyToken=756cf6beb8fe7b41, processorArchitecture=x86">
-      <HintPath>..\packages\JetEntityFrameworkProvider.6.1.4\lib\JetEntityFrameworkProvider.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c6752e45808247c2, processorArchitecture=MSIL">
       <HintPath>..\packages\JSON.1.0.1\lib\net40\Json.dll</HintPath>
       <Private>True</Private>
@@ -187,86 +183,121 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\CRM_CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="crm.Context.cs">
+    <Compile Include="data\CRM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>crm.Context.tt</DependentUpon>
+      <DependentUpon>CRM.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="crm.cs">
+    <Compile Include="data\CRM.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>crm.tt</DependentUpon>
+      <DependentUpon>CRM.tt</DependentUpon>
     </Compile>
-    <Compile Include="crm.Designer.cs">
+    <Compile Include="data\CRM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>crm.edmx</DependentUpon>
+      <DependentUpon>CRM.edmx</DependentUpon>
     </Compile>
-    <Compile Include="CRM_Agreement.cs">
-      <DependentUpon>crm.tt</DependentUpon>
+    <Compile Include="data\CRM_Agreement.cs">
+      <DependentUpon>CRM.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRM_Company.cs">
-      <DependentUpon>crm.tt</DependentUpon>
+    <Compile Include="data\CRM_Company.cs">
+      <DependentUpon>CRM.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRM_Customer.cs">
-      <DependentUpon>crm.tt</DependentUpon>
+    <Compile Include="data\CRM_Customer.cs">
+      <DependentUpon>CRM.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRM_Discount.cs">
-      <DependentUpon>crm.tt</DependentUpon>
+    <Compile Include="data\CRM_Discount.cs">
+      <DependentUpon>CRM.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRM_log.cs">
-      <DependentUpon>crm.tt</DependentUpon>
+    <Compile Include="data\CRM_log.cs">
+      <DependentUpon>CRM.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRM_Setting.cs">
-      <DependentUpon>crm.tt</DependentUpon>
+    <Compile Include="data\CRM_Setting.cs">
+      <DependentUpon>CRM.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRM_SMSSender.cs">
-      <DependentUpon>crm.tt</DependentUpon>
+    <Compile Include="data\CRM_SMSSender.cs">
+      <DependentUpon>CRM.tt</DependentUpon>
     </Compile>
-    <Compile Include="db_info.cs">
-      <DependentUpon>crm.tt</DependentUpon>
+    <Compile Include="data\db_info.cs">
+      <DependentUpon>CRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\ffo.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\ffoa.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\fkh.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\fkha.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\karbar.cs">
+      <DependentUpon>CRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\master.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>master.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\master.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\master.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>master.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="data\mfo.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\mkh.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\pfa.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\SalMaly.cs">
+      <DependentUpon>CRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\SHerkat.cs">
+      <DependentUpon>CRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\vw_Buy.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\vw_BuyList.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\vw_Ccustomer.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\vw_Company.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\vw_customer.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\vw_Product.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\vw_Store.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\wv_Sale.cs">
+      <DependentUpon>master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\wv_SaleList.cs">
+      <DependentUpon>master.tt</DependentUpon>
     </Compile>
     <Compile Include="ErrorLog\errors.cs" />
-    <Compile Include="ffo.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ffoa.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="fkh.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="fkha.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="karbar.cs">
-      <DependentUpon>crm.tt</DependentUpon>
-    </Compile>
-    <Compile Include="mfo.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="mkh.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\commoditys.cs" />
     <Compile Include="Models\commodity.cs" />
@@ -279,9 +310,6 @@
     <Compile Include="myClass\crmManagment.cs" />
     <Compile Include="myClass\dataManagment.cs" />
     <Compile Include="myClass\Exeptioncs.cs" />
-    <Compile Include="pfa.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -293,40 +321,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SalMaly.cs">
-      <DependentUpon>crm.tt</DependentUpon>
-    </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="SHerkat.cs">
-      <DependentUpon>crm.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vw_Buy.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vw_BuyList.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vw_Ccustomer.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vw_Company.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vw_customer.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vw_Product.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vw_Store.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="wv_Sale.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="wv_SaleList.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\seting.txt" />
@@ -496,30 +491,30 @@
     <Content Include="Content\themes\basic\assets\fonts\icons.svg" />
     <Content Include="Content\themes\default\assets\fonts\icons.svg" />
     <Content Include="Content\themes\default\assets\images\flags.png" />
-    <Content Include="crm.Context.tt">
+    <Content Include="data\CRM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>crm.edmx</DependentUpon>
-      <LastGenOutput>crm.Context.cs</LastGenOutput>
+      <DependentUpon>CRM.edmx</DependentUpon>
+      <LastGenOutput>CRM.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="crm.tt">
+    <Content Include="data\CRM.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>crm.edmx</DependentUpon>
-      <LastGenOutput>crm.cs</LastGenOutput>
+      <DependentUpon>CRM.edmx</DependentUpon>
+      <LastGenOutput>CRM.cs</LastGenOutput>
+    </Content>
+    <Content Include="data\master.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>master.edmx</DependentUpon>
+      <LastGenOutput>master.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="data\master.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>master.edmx</DependentUpon>
+      <LastGenOutput>master.cs</LastGenOutput>
     </Content>
     <Content Include="ErrorLog\ErrorLog.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -544,13 +539,6 @@
     <Content Include="assets\fonts\vazir-bold.ttf" />
     <Content Include="assets\fonts\Vazir-Light.ttf" />
     <Content Include="assets\fonts\Vazir-Medium.ttf" />
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\themes\default\assets\fonts\icons.woff2" />
     <Content Include="Content\themes\default\assets\fonts\icons.woff" />
     <Content Include="Content\themes\default\assets\fonts\icons.ttf" />
@@ -559,13 +547,21 @@
     <Content Include="Content\themes\basic\assets\fonts\icons.woff" />
     <Content Include="Content\themes\basic\assets\fonts\icons.ttf" />
     <Content Include="Content\themes\basic\assets\fonts\icons.eot" />
-    <EntityDeploy Include="crm.edmx">
+    <EntityDeploy Include="data\CRM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>crm.Designer.cs</LastGenOutput>
+      <LastGenOutput>CRM.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="crm.edmx.diagram">
-      <DependentUpon>crm.edmx</DependentUpon>
+    <Content Include="data\CRM.edmx.diagram">
+      <DependentUpon>CRM.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="data\master.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>master.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="data\master.edmx.diagram">
+      <DependentUpon>master.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\mysite.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

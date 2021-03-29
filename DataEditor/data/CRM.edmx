@@ -1,0 +1,1178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CRM2008Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CRM_Agreement">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="SHS_ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_Company" Type="int" Nullable="false" />
+          <Property Name="tar" Type="nvarchar" MaxLength="8" />
+          <Property Name="mabkol" Type="float" />
+          <Property Name="sho" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tar1" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="tar2" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="tozih" Type="nvarchar" MaxLength="200" />
+          <Property Name="darn" Type="float" />
+          <Property Name="darq" Type="float" />
+          <Property Name="dare" Type="float" />
+          <Property Name="darb" Type="float" />
+          <Property Name="tozihn" Type="nvarchar" MaxLength="100" />
+          <Property Name="tozihq" Type="nvarchar" MaxLength="100" />
+          <Property Name="tozihe" Type="nvarchar" MaxLength="100" />
+          <Property Name="tozihb" Type="nvarchar" MaxLength="100" />
+          <Property Name="creditq" Type="float" />
+          <Property Name="credite" Type="float" />
+          <Property Name="creditb" Type="float" />
+          <Property Name="cod_hce" Type="float" />
+          <Property Name="cod_hme" Type="float" />
+          <Property Name="cod_hcb" Type="float" />
+          <Property Name="cod_hmb" Type="float" />
+        </EntityType>
+        <EntityType Name="CRM_Company">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="SHS_ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tel" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="fax" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="delegate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tozih" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="CRM_Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="SHS_ID" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="SHO" Type="nvarchar" MaxLength="100" />
+          <Property Name="MOBIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="ADR" Type="nvarchar" MaxLength="100" />
+          <Property Name="FAX" Type="nvarchar" MaxLength="100" />
+          <Property Name="TOZIH" Type="nvarchar" MaxLength="254" />
+          <Property Name="cod_Eshterak" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeMelli" Type="nvarchar" MaxLength="50" />
+          <Property Name="SendSMS" Type="bit" />
+          <Property Name="tar_tavalod" Type="nvarchar" MaxLength="8" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="pas" Type="nvarchar" MaxLength="50" />
+          <Property Name="tar_ez" Type="nvarchar" MaxLength="8" />
+          <Property Name="mail" Type="nvarchar" MaxLength="100" />
+          <Property Name="job" Type="nvarchar" MaxLength="100" />
+          <Property Name="ID_Company" Type="int" />
+          <Property Name="CartKind" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mos_id" Type="int" Nullable="false" />
+          <Property Name="Lottery" Type="bit" Nullable="false" />
+          <Property Name="adder" Type="nvarchar" MaxLength="50" />
+          <Property Name="editor" Type="nvarchar" MaxLength="50" />
+          <Property Name="tar_s" Type="nvarchar" MaxLength="8" />
+          <Property Name="FATHER" Type="nvarchar" MaxLength="15" />
+          <Property Name="SCODE" Type="nvarchar" MaxLength="12" />
+          <Property Name="HOMEPHONE" Type="nvarchar" MaxLength="12" />
+          <Property Name="NAMEL" Type="nvarchar" MaxLength="50" />
+          <Property Name="SSTNDRDCODE" Type="nvarchar" MaxLength="16" />
+          <Property Name="SODOR" Type="nvarchar" MaxLength="15" />
+          <Property Name="SEX" Type="int" />
+          <Property Name="TAHOL" Type="int" />
+          <Property Name="HOMECODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="WORKCODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="WORKADDR" Type="nvarchar" MaxLength="50" />
+          <Property Name="WORKPHONE" Type="nvarchar" MaxLength="12" />
+          <Property Name="bincart" Type="nvarchar" MaxLength="20" />
+          <Property Name="binEXPDATE" Type="nvarchar" MaxLength="7" />
+          <Property Name="binCVV2" Type="nvarchar" MaxLength="4" />
+          <Property Name="tar_edit" Type="nvarchar" MaxLength="8" />
+          <Property Name="tar_kasian_d" Type="nvarchar" MaxLength="8" />
+          <Property Name="tar_kasian_t" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="CRM_Discount">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="ID_Customer" />
+            <PropertyRef Name="ID_Agreement" />
+          </Key>
+          <Property Name="SHS_ID" Type="int" Nullable="false" />
+          <Property Name="ID_Customer" Type="int" Nullable="false" />
+          <Property Name="ID_Agreement" Type="int" Nullable="false" />
+          <Property Name="tar1" Type="nvarchar" MaxLength="8" />
+          <Property Name="tar2" Type="nvarchar" MaxLength="8" />
+          <Property Name="tozih" Type="nvarchar" MaxLength="100" />
+          <Property Name="darn" Type="float" />
+          <Property Name="darq" Type="float" />
+          <Property Name="dare" Type="float" />
+          <Property Name="darb" Type="float" />
+          <Property Name="tozihn" Type="nvarchar" MaxLength="100" />
+          <Property Name="tozihq" Type="nvarchar" MaxLength="100" />
+          <Property Name="tozihe" Type="nvarchar" MaxLength="100" />
+          <Property Name="tozihb" Type="nvarchar" MaxLength="100" />
+          <Property Name="creditq" Type="float" />
+          <Property Name="credite" Type="float" />
+          <Property Name="creditb" Type="float" />
+          <Property Name="cod_hce" Type="float" />
+          <Property Name="cod_hme" Type="float" />
+          <Property Name="cod_hcb" Type="float" />
+          <Property Name="cod_hmb" Type="float" />
+        </EntityType>
+        <EntityType Name="CRM_log">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_Customer" />
+          </Key>
+          <Property Name="SHS_ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Customer" Type="int" Nullable="false" />
+          <Property Name="tar" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="mab" Type="float" />
+          <Property Name="takh" Type="float" />
+          <Property Name="factor_code" Type="float" />
+          <Property Name="TypeDiscount" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_Agreement" Type="int" />
+          <Property Name="shs_id_ffo" Type="int" />
+          <Property Name="shs_id_ffo_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CRM_Setting">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+          </Key>
+          <Property Name="SHS_ID" Type="int" Nullable="false" />
+          <Property Name="takh" Type="ntext" />
+          <Property Name="MsgADD" Type="nvarchar" MaxLength="200" />
+          <Property Name="MsgEdit" Type="nvarchar" MaxLength="200" />
+          <Property Name="MsgDel" Type="nvarchar" MaxLength="100" />
+          <Property Name="MsgAddFffo" Type="nvarchar" MaxLength="100" />
+          <Property Name="MsgAddMfo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Discount" Type="float" />
+          <Property Name="TypeDiscount" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="LibKey" Type="nvarchar" MaxLength="200" />
+          <Property Name="Host_" Type="nvarchar" MaxLength="200" />
+          <Property Name="MsgTavalod" Type="nvarchar" MaxLength="200" />
+          <Property Name="MsgEzdevaj" Type="nvarchar" MaxLength="200" />
+          <Property Name="PersonelDiscount" Type="float" />
+          <Property Name="MsgOmoomi" Type="nvarchar" MaxLength="200" />
+          <Property Name="MsgOmoomi2" Type="nvarchar" MaxLength="200" />
+          <Property Name="facRound" Type="int" />
+          <Property Name="shs_id_FFO" Type="int" Nullable="false" />
+          <Property Name="FacTozihTavalod" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiscountTavalod" Type="float" />
+          <Property Name="DiscountKasian" Type="float" />
+          <Property Name="FactozihKasian" Type="nvarchar" MaxLength="50" />
+          <Property Name="FacTozihEzdevaj" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiscountEzdevaj" Type="float" />
+          <Property Name="FacTozih" Type="nvarchar" MaxLength="50" />
+          <Property Name="FacTozihPersonelDiscount" Type="nvarchar" MaxLength="50" />
+          <Property Name="terminal_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="merch_number" Type="nvarchar" MaxLength="50" />
+          <Property Name="terminalpass" Type="nvarchar" MaxLength="50" />
+          <Property Name="terminalDelpass" Type="nvarchar" MaxLength="50" />
+          <Property Name="SMSTYpe" Type="nvarchar" MaxLength="50" />
+          <Property Name="Msgffo_1" Type="nvarchar" MaxLength="200" />
+          <Property Name="Msgffo_2" Type="nvarchar" MaxLength="200" />
+          <Property Name="Msgffo_3" Type="nvarchar" MaxLength="200" />
+          <Property Name="Msgffo_4" Type="nvarchar" MaxLength="200" />
+          <Property Name="Msgffo_5" Type="nvarchar" MaxLength="200" />
+          <Property Name="terminal_id2" Type="nvarchar" MaxLength="50" />
+          <Property Name="terminalUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="merch_number2" Type="nvarchar" MaxLength="50" />
+          <Property Name="terminalpass2" Type="nvarchar" MaxLength="50" />
+          <Property Name="terminalDelpass2" Type="nvarchar" MaxLength="50" />
+          <Property Name="terminalUser2" Type="nvarchar" MaxLength="50" />
+          <Property Name="kasian_cod_hc" Type="float" />
+          <Property Name="kasian_cod_hm_e" Type="float" />
+          <Property Name="kasian_cod_hm_b" Type="float" />
+          <Property Name="kasian_cod_hm_m" Type="float" />
+          <Property Name="kasian_cod_hm_m2" Type="float" />
+        </EntityType>
+        <EntityType Name="CRM_SMSSender">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_Customer" />
+          </Key>
+          <Property Name="SHS_ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Customer" Type="int" Nullable="false" />
+          <Property Name="tar" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="matn" Type="nvarchar" MaxLength="500" />
+          <Property Name="vaz" Type="int" />
+          <Property Name="shs_id_ffo" Type="int" />
+          <Property Name="shs_id_ffo_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="db_info">
+          <Key>
+            <PropertyRef Name="version" />
+          </Key>
+          <Property Name="version" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="comment" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="karbar">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="SHS_ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="pas" Type="nvarchar" MaxLength="255" />
+          <Property Name="tsCRM_Customer" Type="bit" />
+          <Property Name="BaddCRM_Customer" Type="bit" />
+          <Property Name="BeditCRM_Customer" Type="bit" />
+          <Property Name="BdelCRM_Customer" Type="bit" />
+          <Property Name="tsrepCRM_Customer" Type="bit" />
+          <Property Name="tsCRM_Company" Type="bit" />
+          <Property Name="baddCRM_Company" Type="bit" />
+          <Property Name="beditCRM_Company" Type="bit" />
+          <Property Name="bdelCRM_Company" Type="bit" />
+          <Property Name="tsrepCRM_Company" Type="bit" />
+          <Property Name="tsCRM_Agreement" Type="bit" />
+          <Property Name="baddCRM_Agreement" Type="bit" />
+          <Property Name="beditCRM_Agreement" Type="bit" />
+          <Property Name="bdelCRM_Agreement" Type="bit" />
+          <Property Name="tsrepCRM_Agreement" Type="bit" />
+          <Property Name="tsCRM_Discount" Type="bit" />
+          <Property Name="baddCRM_Discount" Type="bit" />
+          <Property Name="beditCRM_Discount" Type="bit" />
+          <Property Name="bdelCRM_Discount" Type="bit" />
+          <Property Name="tsrepCRM_Discount" Type="bit" />
+          <Property Name="bdelCRM_log" Type="bit" />
+          <Property Name="tsrepCRM_log" Type="bit" />
+          <Property Name="tsCRM_Setting" Type="bit" />
+          <Property Name="beditCRM_Setting" Type="bit" />
+          <Property Name="tsCRM_SMSSender" Type="bit" />
+          <Property Name="baddCRM_SMSSender" Type="bit" />
+          <Property Name="beditCRM_SMSSender" Type="bit" />
+          <Property Name="bdelCRM_SMSSender" Type="bit" />
+          <Property Name="tskarbar" Type="bit" />
+          <Property Name="Admin" Type="bit" />
+        </EntityType>
+        <EntityType Name="SalMaly">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+          </Key>
+          <Property Name="SHS_ID" Type="int" Nullable="false" />
+          <Property Name="root" Type="int" Nullable="false" />
+          <Property Name="sal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SHerkat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_CRM_Agreement_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_Agreement" Type="Self.CRM_Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_Agreement">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRM_Company_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_Company" Type="Self.CRM_Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_Company">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRM_Customer_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_Customer" Type="Self.CRM_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_Customer">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRM_log_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_log" Type="Self.CRM_log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_log">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRM_Setting_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_Setting" Type="Self.CRM_Setting" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_Setting">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRM_SMSSender_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_SMSSender" Type="Self.CRM_SMSSender" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_SMSSender">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_karbar_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="karbar" Type="Self.karbar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="karbar">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalMaly_SHerkat">
+          <End Role="SHerkat" Type="Self.SHerkat" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SHerkat">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SalMaly">
+              <PropertyRef Name="root" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CRM2008ModelStoreContainer">
+          <EntitySet Name="CRM_Agreement" EntityType="Self.CRM_Agreement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRM_Company" EntityType="Self.CRM_Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRM_Customer" EntityType="Self.CRM_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRM_Discount" EntityType="Self.CRM_Discount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRM_log" EntityType="Self.CRM_log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRM_Setting" EntityType="Self.CRM_Setting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRM_SMSSender" EntityType="Self.CRM_SMSSender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="db_info" EntityType="Self.db_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="karbar" EntityType="Self.karbar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalMaly" EntityType="Self.SalMaly" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SHerkat" EntityType="Self.SHerkat" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CRM_Agreement_SalMaly" Association="Self.FK_CRM_Agreement_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMaly" />
+            <End Role="CRM_Agreement" EntitySet="CRM_Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRM_Company_SalMaly" Association="Self.FK_CRM_Company_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMaly" />
+            <End Role="CRM_Company" EntitySet="CRM_Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRM_Customer_SalMaly" Association="Self.FK_CRM_Customer_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMaly" />
+            <End Role="CRM_Customer" EntitySet="CRM_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRM_log_SalMaly" Association="Self.FK_CRM_log_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMaly" />
+            <End Role="CRM_log" EntitySet="CRM_log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRM_Setting_SalMaly" Association="Self.FK_CRM_Setting_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMaly" />
+            <End Role="CRM_Setting" EntitySet="CRM_Setting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRM_SMSSender_SalMaly" Association="Self.FK_CRM_SMSSender_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMaly" />
+            <End Role="CRM_SMSSender" EntitySet="CRM_SMSSender" />
+          </AssociationSet>
+          <AssociationSet Name="FK_karbar_SalMaly" Association="Self.FK_karbar_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMaly" />
+            <End Role="karbar" EntitySet="karbar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalMaly_SHerkat" Association="Self.FK_SalMaly_SHerkat">
+            <End Role="SHerkat" EntitySet="SHerkat" />
+            <End Role="SalMaly" EntitySet="SalMaly" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRM2008Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CRM_Agreement">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="SHS_ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_Company" Type="Int32" Nullable="false" />
+          <Property Name="tar" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="mabkol" Type="Double" />
+          <Property Name="sho" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tar1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tar2" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tozih" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="darn" Type="Double" />
+          <Property Name="darq" Type="Double" />
+          <Property Name="dare" Type="Double" />
+          <Property Name="darb" Type="Double" />
+          <Property Name="tozihn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tozihq" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tozihe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tozihb" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="creditq" Type="Double" />
+          <Property Name="credite" Type="Double" />
+          <Property Name="creditb" Type="Double" />
+          <Property Name="cod_hce" Type="Double" />
+          <Property Name="cod_hme" Type="Double" />
+          <Property Name="cod_hcb" Type="Double" />
+          <Property Name="cod_hmb" Type="Double" />
+          <NavigationProperty Name="SalMaly" Relationship="Self.FK_CRM_Agreement_SalMaly" FromRole="CRM_Agreement" ToRole="SalMaly" />
+        </EntityType>
+        <EntityType Name="CRM_Company">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="SHS_ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="delegate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tozih" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SalMaly" Relationship="Self.FK_CRM_Company_SalMaly" FromRole="CRM_Company" ToRole="SalMaly" />
+        </EntityType>
+        <EntityType Name="CRM_Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="SHS_ID" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SHO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MOBIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ADR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TOZIH" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="cod_Eshterak" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodeMelli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SendSMS" Type="Boolean" />
+          <Property Name="tar_tavalod" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tar_ez" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="job" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Company" Type="Int32" />
+          <Property Name="CartKind" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mos_id" Type="Int32" Nullable="false" />
+          <Property Name="Lottery" Type="Boolean" Nullable="false" />
+          <Property Name="adder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="editor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tar_s" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FATHER" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SCODE" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="HOMEPHONE" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="NAMEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SSTNDRDCODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="SODOR" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SEX" Type="Int32" />
+          <Property Name="TAHOL" Type="Int32" />
+          <Property Name="HOMECODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="WORKCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="WORKADDR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WORKPHONE" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="bincart" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="binEXPDATE" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="binCVV2" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="tar_edit" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="tar_kasian_d" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="tar_kasian_t" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SalMaly" Relationship="Self.FK_CRM_Customer_SalMaly" FromRole="CRM_Customer" ToRole="SalMaly" />
+        </EntityType>
+        <EntityType Name="CRM_Discount">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="ID_Customer" />
+            <PropertyRef Name="ID_Agreement" />
+          </Key>
+          <Property Name="SHS_ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_Customer" Type="Int32" Nullable="false" />
+          <Property Name="ID_Agreement" Type="Int32" Nullable="false" />
+          <Property Name="tar1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="tar2" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="tozih" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="darn" Type="Double" />
+          <Property Name="darq" Type="Double" />
+          <Property Name="dare" Type="Double" />
+          <Property Name="darb" Type="Double" />
+          <Property Name="tozihn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tozihq" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tozihe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tozihb" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="creditq" Type="Double" />
+          <Property Name="credite" Type="Double" />
+          <Property Name="creditb" Type="Double" />
+          <Property Name="cod_hce" Type="Double" />
+          <Property Name="cod_hme" Type="Double" />
+          <Property Name="cod_hcb" Type="Double" />
+          <Property Name="cod_hmb" Type="Double" />
+        </EntityType>
+        <EntityType Name="CRM_log">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_Customer" />
+          </Key>
+          <Property Name="SHS_ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Customer" Type="Int32" Nullable="false" />
+          <Property Name="tar" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mab" Type="Double" />
+          <Property Name="takh" Type="Double" />
+          <Property Name="factor_code" Type="Double" />
+          <Property Name="TypeDiscount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Agreement" Type="Int32" />
+          <Property Name="shs_id_ffo" Type="Int32" />
+          <Property Name="shs_id_ffo_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SalMaly" Relationship="Self.FK_CRM_log_SalMaly" FromRole="CRM_log" ToRole="SalMaly" />
+        </EntityType>
+        <EntityType Name="CRM_Setting">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+          </Key>
+          <Property Name="SHS_ID" Type="Int32" Nullable="false" />
+          <Property Name="takh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgADD" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MsgEdit" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MsgDel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MsgAddFffo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MsgAddMfo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Discount" Type="Double" />
+          <Property Name="TypeDiscount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LibKey" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Host_" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MsgTavalod" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MsgEzdevaj" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelDiscount" Type="Double" />
+          <Property Name="MsgOmoomi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MsgOmoomi2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="facRound" Type="Int32" />
+          <Property Name="shs_id_FFO" Type="Int32" Nullable="false" />
+          <Property Name="FacTozihTavalod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiscountTavalod" Type="Double" />
+          <Property Name="DiscountKasian" Type="Double" />
+          <Property Name="FactozihKasian" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FacTozihEzdevaj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiscountEzdevaj" Type="Double" />
+          <Property Name="FacTozih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FacTozihPersonelDiscount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="terminal_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="merch_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="terminalpass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="terminalDelpass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SMSTYpe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Msgffo_1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Msgffo_2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Msgffo_3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Msgffo_4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Msgffo_5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="terminal_id2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="terminalUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="merch_number2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="terminalpass2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="terminalDelpass2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="terminalUser2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kasian_cod_hc" Type="Double" />
+          <Property Name="kasian_cod_hm_e" Type="Double" />
+          <Property Name="kasian_cod_hm_b" Type="Double" />
+          <Property Name="kasian_cod_hm_m" Type="Double" />
+          <Property Name="kasian_cod_hm_m2" Type="Double" />
+          <NavigationProperty Name="SalMaly" Relationship="Self.FK_CRM_Setting_SalMaly" FromRole="CRM_Setting" ToRole="SalMaly" />
+        </EntityType>
+        <EntityType Name="CRM_SMSSender">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_Customer" />
+          </Key>
+          <Property Name="SHS_ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Customer" Type="Int32" Nullable="false" />
+          <Property Name="tar" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="matn" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="vaz" Type="Int32" />
+          <Property Name="shs_id_ffo" Type="Int32" />
+          <Property Name="shs_id_ffo_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SalMaly" Relationship="Self.FK_CRM_SMSSender_SalMaly" FromRole="CRM_SMSSender" ToRole="SalMaly" />
+        </EntityType>
+        <EntityType Name="db_info">
+          <Key>
+            <PropertyRef Name="version" />
+          </Key>
+          <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="comment" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="karbar">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="SHS_ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="pas" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tsCRM_Customer" Type="Boolean" />
+          <Property Name="BaddCRM_Customer" Type="Boolean" />
+          <Property Name="BeditCRM_Customer" Type="Boolean" />
+          <Property Name="BdelCRM_Customer" Type="Boolean" />
+          <Property Name="tsrepCRM_Customer" Type="Boolean" />
+          <Property Name="tsCRM_Company" Type="Boolean" />
+          <Property Name="baddCRM_Company" Type="Boolean" />
+          <Property Name="beditCRM_Company" Type="Boolean" />
+          <Property Name="bdelCRM_Company" Type="Boolean" />
+          <Property Name="tsrepCRM_Company" Type="Boolean" />
+          <Property Name="tsCRM_Agreement" Type="Boolean" />
+          <Property Name="baddCRM_Agreement" Type="Boolean" />
+          <Property Name="beditCRM_Agreement" Type="Boolean" />
+          <Property Name="bdelCRM_Agreement" Type="Boolean" />
+          <Property Name="tsrepCRM_Agreement" Type="Boolean" />
+          <Property Name="tsCRM_Discount" Type="Boolean" />
+          <Property Name="baddCRM_Discount" Type="Boolean" />
+          <Property Name="beditCRM_Discount" Type="Boolean" />
+          <Property Name="bdelCRM_Discount" Type="Boolean" />
+          <Property Name="tsrepCRM_Discount" Type="Boolean" />
+          <Property Name="bdelCRM_log" Type="Boolean" />
+          <Property Name="tsrepCRM_log" Type="Boolean" />
+          <Property Name="tsCRM_Setting" Type="Boolean" />
+          <Property Name="beditCRM_Setting" Type="Boolean" />
+          <Property Name="tsCRM_SMSSender" Type="Boolean" />
+          <Property Name="baddCRM_SMSSender" Type="Boolean" />
+          <Property Name="beditCRM_SMSSender" Type="Boolean" />
+          <Property Name="bdelCRM_SMSSender" Type="Boolean" />
+          <Property Name="tskarbar" Type="Boolean" />
+          <Property Name="Admin" Type="Boolean" />
+          <NavigationProperty Name="SalMaly" Relationship="Self.FK_karbar_SalMaly" FromRole="karbar" ToRole="SalMaly" />
+        </EntityType>
+        <EntityType Name="SalMaly">
+          <Key>
+            <PropertyRef Name="SHS_ID" />
+          </Key>
+          <Property Name="SHS_ID" Type="Int32" Nullable="false" />
+          <Property Name="root" Type="Int32" Nullable="false" />
+          <Property Name="sal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CRM_Agreement" Relationship="Self.FK_CRM_Agreement_SalMaly" FromRole="SalMaly" ToRole="CRM_Agreement" />
+          <NavigationProperty Name="CRM_Company" Relationship="Self.FK_CRM_Company_SalMaly" FromRole="SalMaly" ToRole="CRM_Company" />
+          <NavigationProperty Name="CRM_Customer" Relationship="Self.FK_CRM_Customer_SalMaly" FromRole="SalMaly" ToRole="CRM_Customer" />
+          <NavigationProperty Name="CRM_log" Relationship="Self.FK_CRM_log_SalMaly" FromRole="SalMaly" ToRole="CRM_log" />
+          <NavigationProperty Name="CRM_Setting" Relationship="Self.FK_CRM_Setting_SalMaly" FromRole="SalMaly" ToRole="CRM_Setting" />
+          <NavigationProperty Name="CRM_SMSSender" Relationship="Self.FK_CRM_SMSSender_SalMaly" FromRole="SalMaly" ToRole="CRM_SMSSender" />
+          <NavigationProperty Name="karbars" Relationship="Self.FK_karbar_SalMaly" FromRole="SalMaly" ToRole="karbar" />
+          <NavigationProperty Name="SHerkat" Relationship="Self.FK_SalMaly_SHerkat" FromRole="SalMaly" ToRole="SHerkat" />
+        </EntityType>
+        <EntityType Name="SHerkat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SalMalies" Relationship="Self.FK_SalMaly_SHerkat" FromRole="SHerkat" ToRole="SalMaly" />
+        </EntityType>
+        <Association Name="FK_CRM_Agreement_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_Agreement" Type="Self.CRM_Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_Agreement">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRM_Company_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_Company" Type="Self.CRM_Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_Company">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRM_Customer_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_Customer" Type="Self.CRM_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_Customer">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRM_log_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_log" Type="Self.CRM_log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_log">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRM_Setting_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_Setting" Type="Self.CRM_Setting" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_Setting">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRM_SMSSender_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRM_SMSSender" Type="Self.CRM_SMSSender" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="CRM_SMSSender">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_karbar_SalMaly">
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="karbar" Type="Self.karbar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalMaly">
+              <PropertyRef Name="SHS_ID" />
+            </Principal>
+            <Dependent Role="karbar">
+              <PropertyRef Name="SHS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalMaly_SHerkat">
+          <End Role="SHerkat" Type="Self.SHerkat" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SalMaly" Type="Self.SalMaly" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SHerkat">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SalMaly">
+              <PropertyRef Name="root" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CRM2008Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CRM_Agreement" EntityType="Self.CRM_Agreement" />
+          <EntitySet Name="CRM_Company" EntityType="Self.CRM_Company" />
+          <EntitySet Name="CRM_Customer" EntityType="Self.CRM_Customer" />
+          <EntitySet Name="CRM_Discount" EntityType="Self.CRM_Discount" />
+          <EntitySet Name="CRM_log" EntityType="Self.CRM_log" />
+          <EntitySet Name="CRM_Setting" EntityType="Self.CRM_Setting" />
+          <EntitySet Name="CRM_SMSSender" EntityType="Self.CRM_SMSSender" />
+          <EntitySet Name="db_info" EntityType="Self.db_info" />
+          <EntitySet Name="karbars" EntityType="Self.karbar" />
+          <EntitySet Name="SalMalies" EntityType="Self.SalMaly" />
+          <EntitySet Name="SHerkats" EntityType="Self.SHerkat" />
+          <AssociationSet Name="FK_CRM_Agreement_SalMaly" Association="Self.FK_CRM_Agreement_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMalies" />
+            <End Role="CRM_Agreement" EntitySet="CRM_Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRM_Company_SalMaly" Association="Self.FK_CRM_Company_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMalies" />
+            <End Role="CRM_Company" EntitySet="CRM_Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRM_Customer_SalMaly" Association="Self.FK_CRM_Customer_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMalies" />
+            <End Role="CRM_Customer" EntitySet="CRM_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRM_log_SalMaly" Association="Self.FK_CRM_log_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMalies" />
+            <End Role="CRM_log" EntitySet="CRM_log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRM_Setting_SalMaly" Association="Self.FK_CRM_Setting_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMalies" />
+            <End Role="CRM_Setting" EntitySet="CRM_Setting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRM_SMSSender_SalMaly" Association="Self.FK_CRM_SMSSender_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMalies" />
+            <End Role="CRM_SMSSender" EntitySet="CRM_SMSSender" />
+          </AssociationSet>
+          <AssociationSet Name="FK_karbar_SalMaly" Association="Self.FK_karbar_SalMaly">
+            <End Role="SalMaly" EntitySet="SalMalies" />
+            <End Role="karbar" EntitySet="karbars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalMaly_SHerkat" Association="Self.FK_SalMaly_SHerkat">
+            <End Role="SHerkat" EntitySet="SHerkats" />
+            <End Role="SalMaly" EntitySet="SalMalies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CRM2008ModelStoreContainer" CdmEntityContainer="CRM2008Entities">
+          <EntitySetMapping Name="CRM_Agreement">
+            <EntityTypeMapping TypeName="CRM2008Model.CRM_Agreement">
+              <MappingFragment StoreEntitySet="CRM_Agreement">
+                <ScalarProperty Name="SHS_ID" ColumnName="SHS_ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="ID_Company" ColumnName="ID_Company" />
+                <ScalarProperty Name="tar" ColumnName="tar" />
+                <ScalarProperty Name="mabkol" ColumnName="mabkol" />
+                <ScalarProperty Name="sho" ColumnName="sho" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="tar1" ColumnName="tar1" />
+                <ScalarProperty Name="tar2" ColumnName="tar2" />
+                <ScalarProperty Name="tozih" ColumnName="tozih" />
+                <ScalarProperty Name="darn" ColumnName="darn" />
+                <ScalarProperty Name="darq" ColumnName="darq" />
+                <ScalarProperty Name="dare" ColumnName="dare" />
+                <ScalarProperty Name="darb" ColumnName="darb" />
+                <ScalarProperty Name="tozihn" ColumnName="tozihn" />
+                <ScalarProperty Name="tozihq" ColumnName="tozihq" />
+                <ScalarProperty Name="tozihe" ColumnName="tozihe" />
+                <ScalarProperty Name="tozihb" ColumnName="tozihb" />
+                <ScalarProperty Name="creditq" ColumnName="creditq" />
+                <ScalarProperty Name="credite" ColumnName="credite" />
+                <ScalarProperty Name="creditb" ColumnName="creditb" />
+                <ScalarProperty Name="cod_hce" ColumnName="cod_hce" />
+                <ScalarProperty Name="cod_hme" ColumnName="cod_hme" />
+                <ScalarProperty Name="cod_hcb" ColumnName="cod_hcb" />
+                <ScalarProperty Name="cod_hmb" ColumnName="cod_hmb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRM_Company">
+            <EntityTypeMapping TypeName="CRM2008Model.CRM_Company">
+              <MappingFragment StoreEntitySet="CRM_Company">
+                <ScalarProperty Name="SHS_ID" ColumnName="SHS_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="delegate" ColumnName="delegate" />
+                <ScalarProperty Name="tozih" ColumnName="tozih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRM_Customer">
+            <EntityTypeMapping TypeName="CRM2008Model.CRM_Customer">
+              <MappingFragment StoreEntitySet="CRM_Customer">
+                <ScalarProperty Name="SHS_ID" ColumnName="SHS_ID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SHO" ColumnName="SHO" />
+                <ScalarProperty Name="MOBIL" ColumnName="MOBIL" />
+                <ScalarProperty Name="ADR" ColumnName="ADR" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="TOZIH" ColumnName="TOZIH" />
+                <ScalarProperty Name="cod_Eshterak" ColumnName="cod_Eshterak" />
+                <ScalarProperty Name="CodeMelli" ColumnName="CodeMelli" />
+                <ScalarProperty Name="SendSMS" ColumnName="SendSMS" />
+                <ScalarProperty Name="tar_tavalod" ColumnName="tar_tavalod" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="pas" ColumnName="pas" />
+                <ScalarProperty Name="tar_ez" ColumnName="tar_ez" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="job" ColumnName="job" />
+                <ScalarProperty Name="ID_Company" ColumnName="ID_Company" />
+                <ScalarProperty Name="CartKind" ColumnName="CartKind" />
+                <ScalarProperty Name="Mos_id" ColumnName="Mos_id" />
+                <ScalarProperty Name="Lottery" ColumnName="Lottery" />
+                <ScalarProperty Name="adder" ColumnName="adder" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="tar_s" ColumnName="tar_s" />
+                <ScalarProperty Name="FATHER" ColumnName="FATHER" />
+                <ScalarProperty Name="SCODE" ColumnName="SCODE" />
+                <ScalarProperty Name="HOMEPHONE" ColumnName="HOMEPHONE" />
+                <ScalarProperty Name="NAMEL" ColumnName="NAMEL" />
+                <ScalarProperty Name="SSTNDRDCODE" ColumnName="SSTNDRDCODE" />
+                <ScalarProperty Name="SODOR" ColumnName="SODOR" />
+                <ScalarProperty Name="SEX" ColumnName="SEX" />
+                <ScalarProperty Name="TAHOL" ColumnName="TAHOL" />
+                <ScalarProperty Name="HOMECODE" ColumnName="HOMECODE" />
+                <ScalarProperty Name="WORKCODE" ColumnName="WORKCODE" />
+                <ScalarProperty Name="WORKADDR" ColumnName="WORKADDR" />
+                <ScalarProperty Name="WORKPHONE" ColumnName="WORKPHONE" />
+                <ScalarProperty Name="bincart" ColumnName="bincart" />
+                <ScalarProperty Name="binEXPDATE" ColumnName="binEXPDATE" />
+                <ScalarProperty Name="binCVV2" ColumnName="binCVV2" />
+                <ScalarProperty Name="tar_edit" ColumnName="tar_edit" />
+                <ScalarProperty Name="tar_kasian_d" ColumnName="tar_kasian_d" />
+                <ScalarProperty Name="tar_kasian_t" ColumnName="tar_kasian_t" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRM_Discount">
+            <EntityTypeMapping TypeName="CRM2008Model.CRM_Discount">
+              <MappingFragment StoreEntitySet="CRM_Discount">
+                <ScalarProperty Name="SHS_ID" ColumnName="SHS_ID" />
+                <ScalarProperty Name="ID_Customer" ColumnName="ID_Customer" />
+                <ScalarProperty Name="ID_Agreement" ColumnName="ID_Agreement" />
+                <ScalarProperty Name="tar1" ColumnName="tar1" />
+                <ScalarProperty Name="tar2" ColumnName="tar2" />
+                <ScalarProperty Name="tozih" ColumnName="tozih" />
+                <ScalarProperty Name="darn" ColumnName="darn" />
+                <ScalarProperty Name="darq" ColumnName="darq" />
+                <ScalarProperty Name="dare" ColumnName="dare" />
+                <ScalarProperty Name="darb" ColumnName="darb" />
+                <ScalarProperty Name="tozihn" ColumnName="tozihn" />
+                <ScalarProperty Name="tozihq" ColumnName="tozihq" />
+                <ScalarProperty Name="tozihe" ColumnName="tozihe" />
+                <ScalarProperty Name="tozihb" ColumnName="tozihb" />
+                <ScalarProperty Name="creditq" ColumnName="creditq" />
+                <ScalarProperty Name="credite" ColumnName="credite" />
+                <ScalarProperty Name="creditb" ColumnName="creditb" />
+                <ScalarProperty Name="cod_hce" ColumnName="cod_hce" />
+                <ScalarProperty Name="cod_hme" ColumnName="cod_hme" />
+                <ScalarProperty Name="cod_hcb" ColumnName="cod_hcb" />
+                <ScalarProperty Name="cod_hmb" ColumnName="cod_hmb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRM_log">
+            <EntityTypeMapping TypeName="CRM2008Model.CRM_log">
+              <MappingFragment StoreEntitySet="CRM_log">
+                <ScalarProperty Name="SHS_ID" ColumnName="SHS_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Customer" ColumnName="ID_Customer" />
+                <ScalarProperty Name="tar" ColumnName="tar" />
+                <ScalarProperty Name="mab" ColumnName="mab" />
+                <ScalarProperty Name="takh" ColumnName="takh" />
+                <ScalarProperty Name="factor_code" ColumnName="factor_code" />
+                <ScalarProperty Name="TypeDiscount" ColumnName="TypeDiscount" />
+                <ScalarProperty Name="ID_Agreement" ColumnName="ID_Agreement" />
+                <ScalarProperty Name="shs_id_ffo" ColumnName="shs_id_ffo" />
+                <ScalarProperty Name="shs_id_ffo_name" ColumnName="shs_id_ffo_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRM_Setting">
+            <EntityTypeMapping TypeName="CRM2008Model.CRM_Setting">
+              <MappingFragment StoreEntitySet="CRM_Setting">
+                <ScalarProperty Name="SHS_ID" ColumnName="SHS_ID" />
+                <ScalarProperty Name="takh" ColumnName="takh" />
+                <ScalarProperty Name="MsgADD" ColumnName="MsgADD" />
+                <ScalarProperty Name="MsgEdit" ColumnName="MsgEdit" />
+                <ScalarProperty Name="MsgDel" ColumnName="MsgDel" />
+                <ScalarProperty Name="MsgAddFffo" ColumnName="MsgAddFffo" />
+                <ScalarProperty Name="MsgAddMfo" ColumnName="MsgAddMfo" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="TypeDiscount" ColumnName="TypeDiscount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LibKey" ColumnName="LibKey" />
+                <ScalarProperty Name="Host_" ColumnName="Host_" />
+                <ScalarProperty Name="MsgTavalod" ColumnName="MsgTavalod" />
+                <ScalarProperty Name="MsgEzdevaj" ColumnName="MsgEzdevaj" />
+                <ScalarProperty Name="PersonelDiscount" ColumnName="PersonelDiscount" />
+                <ScalarProperty Name="MsgOmoomi" ColumnName="MsgOmoomi" />
+                <ScalarProperty Name="MsgOmoomi2" ColumnName="MsgOmoomi2" />
+                <ScalarProperty Name="facRound" ColumnName="facRound" />
+                <ScalarProperty Name="shs_id_FFO" ColumnName="shs_id_FFO" />
+                <ScalarProperty Name="FacTozihTavalod" ColumnName="FacTozihTavalod" />
+                <ScalarProperty Name="DiscountTavalod" ColumnName="DiscountTavalod" />
+                <ScalarProperty Name="DiscountKasian" ColumnName="DiscountKasian" />
+                <ScalarProperty Name="FactozihKasian" ColumnName="FactozihKasian" />
+                <ScalarProperty Name="FacTozihEzdevaj" ColumnName="FacTozihEzdevaj" />
+                <ScalarProperty Name="DiscountEzdevaj" ColumnName="DiscountEzdevaj" />
+                <ScalarProperty Name="FacTozih" ColumnName="FacTozih" />
+                <ScalarProperty Name="FacTozihPersonelDiscount" ColumnName="FacTozihPersonelDiscount" />
+                <ScalarProperty Name="terminal_id" ColumnName="terminal_id" />
+                <ScalarProperty Name="merch_number" ColumnName="merch_number" />
+                <ScalarProperty Name="terminalpass" ColumnName="terminalpass" />
+                <ScalarProperty Name="terminalDelpass" ColumnName="terminalDelpass" />
+                <ScalarProperty Name="SMSTYpe" ColumnName="SMSTYpe" />
+                <ScalarProperty Name="Msgffo_1" ColumnName="Msgffo_1" />
+                <ScalarProperty Name="Msgffo_2" ColumnName="Msgffo_2" />
+                <ScalarProperty Name="Msgffo_3" ColumnName="Msgffo_3" />
+                <ScalarProperty Name="Msgffo_4" ColumnName="Msgffo_4" />
+                <ScalarProperty Name="Msgffo_5" ColumnName="Msgffo_5" />
+                <ScalarProperty Name="terminal_id2" ColumnName="terminal_id2" />
+                <ScalarProperty Name="terminalUser" ColumnName="terminalUser" />
+                <ScalarProperty Name="merch_number2" ColumnName="merch_number2" />
+                <ScalarProperty Name="terminalpass2" ColumnName="terminalpass2" />
+                <ScalarProperty Name="terminalDelpass2" ColumnName="terminalDelpass2" />
+                <ScalarProperty Name="terminalUser2" ColumnName="terminalUser2" />
+                <ScalarProperty Name="kasian_cod_hc" ColumnName="kasian_cod_hc" />
+                <ScalarProperty Name="kasian_cod_hm_e" ColumnName="kasian_cod_hm_e" />
+                <ScalarProperty Name="kasian_cod_hm_b" ColumnName="kasian_cod_hm_b" />
+                <ScalarProperty Name="kasian_cod_hm_m" ColumnName="kasian_cod_hm_m" />
+                <ScalarProperty Name="kasian_cod_hm_m2" ColumnName="kasian_cod_hm_m2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRM_SMSSender">
+            <EntityTypeMapping TypeName="CRM2008Model.CRM_SMSSender">
+              <MappingFragment StoreEntitySet="CRM_SMSSender">
+                <ScalarProperty Name="SHS_ID" ColumnName="SHS_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Customer" ColumnName="ID_Customer" />
+                <ScalarProperty Name="tar" ColumnName="tar" />
+                <ScalarProperty Name="matn" ColumnName="matn" />
+                <ScalarProperty Name="vaz" ColumnName="vaz" />
+                <ScalarProperty Name="shs_id_ffo" ColumnName="shs_id_ffo" />
+                <ScalarProperty Name="shs_id_ffo_name" ColumnName="shs_id_ffo_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="db_info">
+            <EntityTypeMapping TypeName="CRM2008Model.db_info">
+              <MappingFragment StoreEntitySet="db_info">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="karbars">
+            <EntityTypeMapping TypeName="CRM2008Model.karbar">
+              <MappingFragment StoreEntitySet="karbar">
+                <ScalarProperty Name="SHS_ID" ColumnName="SHS_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="pas" ColumnName="pas" />
+                <ScalarProperty Name="tsCRM_Customer" ColumnName="tsCRM_Customer" />
+                <ScalarProperty Name="BaddCRM_Customer" ColumnName="BaddCRM_Customer" />
+                <ScalarProperty Name="BeditCRM_Customer" ColumnName="BeditCRM_Customer" />
+                <ScalarProperty Name="BdelCRM_Customer" ColumnName="BdelCRM_Customer" />
+                <ScalarProperty Name="tsrepCRM_Customer" ColumnName="tsrepCRM_Customer" />
+                <ScalarProperty Name="tsCRM_Company" ColumnName="tsCRM_Company" />
+                <ScalarProperty Name="baddCRM_Company" ColumnName="baddCRM_Company" />
+                <ScalarProperty Name="beditCRM_Company" ColumnName="beditCRM_Company" />
+                <ScalarProperty Name="bdelCRM_Company" ColumnName="bdelCRM_Company" />
+                <ScalarProperty Name="tsrepCRM_Company" ColumnName="tsrepCRM_Company" />
+                <ScalarProperty Name="tsCRM_Agreement" ColumnName="tsCRM_Agreement" />
+                <ScalarProperty Name="baddCRM_Agreement" ColumnName="baddCRM_Agreement" />
+                <ScalarProperty Name="beditCRM_Agreement" ColumnName="beditCRM_Agreement" />
+                <ScalarProperty Name="bdelCRM_Agreement" ColumnName="bdelCRM_Agreement" />
+                <ScalarProperty Name="tsrepCRM_Agreement" ColumnName="tsrepCRM_Agreement" />
+                <ScalarProperty Name="tsCRM_Discount" ColumnName="tsCRM_Discount" />
+                <ScalarProperty Name="baddCRM_Discount" ColumnName="baddCRM_Discount" />
+                <ScalarProperty Name="beditCRM_Discount" ColumnName="beditCRM_Discount" />
+                <ScalarProperty Name="bdelCRM_Discount" ColumnName="bdelCRM_Discount" />
+                <ScalarProperty Name="tsrepCRM_Discount" ColumnName="tsrepCRM_Discount" />
+                <ScalarProperty Name="bdelCRM_log" ColumnName="bdelCRM_log" />
+                <ScalarProperty Name="tsrepCRM_log" ColumnName="tsrepCRM_log" />
+                <ScalarProperty Name="tsCRM_Setting" ColumnName="tsCRM_Setting" />
+                <ScalarProperty Name="beditCRM_Setting" ColumnName="beditCRM_Setting" />
+                <ScalarProperty Name="tsCRM_SMSSender" ColumnName="tsCRM_SMSSender" />
+                <ScalarProperty Name="baddCRM_SMSSender" ColumnName="baddCRM_SMSSender" />
+                <ScalarProperty Name="beditCRM_SMSSender" ColumnName="beditCRM_SMSSender" />
+                <ScalarProperty Name="bdelCRM_SMSSender" ColumnName="bdelCRM_SMSSender" />
+                <ScalarProperty Name="tskarbar" ColumnName="tskarbar" />
+                <ScalarProperty Name="Admin" ColumnName="Admin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalMalies">
+            <EntityTypeMapping TypeName="CRM2008Model.SalMaly">
+              <MappingFragment StoreEntitySet="SalMaly">
+                <ScalarProperty Name="SHS_ID" ColumnName="SHS_ID" />
+                <ScalarProperty Name="root" ColumnName="root" />
+                <ScalarProperty Name="sal" ColumnName="sal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SHerkats">
+            <EntityTypeMapping TypeName="CRM2008Model.SHerkat">
+              <MappingFragment StoreEntitySet="SHerkat">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

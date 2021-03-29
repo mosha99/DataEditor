@@ -162,7 +162,7 @@
 }
 <div class="container-lg d-flex justify-content-center  align-items-center align-content-center justify-content-xl-center align-items-xl-center div-c" style="flex-direction:column;">
     
-    <div class="input-group mb-3 col-6 " style="direction :ltr;">  
+    <div class="input-group mb-3 col-12 " style="direction :ltr;">  
         @using (Html.BeginForm("serchCRM", "home", FormMethod.Post))
         {
             if (ViewBag.serch != null)
@@ -226,6 +226,19 @@
             //alert(url);
             window.location.replace(url);
         });
+        //var lastScrollTop = 0;
+        //$(window).scroll(function (event) {
+        //    var st = $(this).scrollTop();
+
+        //    if (st > lastScrollTop) {
+        //        $(".footer-dark").hide()
+        //        $(".navbar").hide()
+        //    } else {
+        //        $(".footer-dark").show()
+        //        $(".navbar").show()                // upscroll code
+        //    }
+        //    lastScrollTop = st;
+        //});
 
     </script>
 

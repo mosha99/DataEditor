@@ -88,7 +88,7 @@
                     </a>
                     <div class="dropdown-menu">
                         <h5 class="dropdown-header">CRM</h5>
-                        <a class="dropdown-item" href="@Url.Action("addcrm")">افزودن crm</a>
+                        <a class="dropdown-item" href="@Url.Action("addcrm")"  >افزودن crm</a>
                         <a class="dropdown-item" href="@Url.Action("serchcrm")">جستوجوی crm</a>
                         <h5 class="dropdown-header">انبار ها</h5>
                         <a class="dropdown-item" href="#">افزودن انبار</a>
@@ -96,12 +96,12 @@
                 </div>
                 
                 <a class="nav-a l @RenderSection("list", required: false) " href="@Url.Action("list")"><i class="fa fa-list-ul"></i>  لیست کالاها</a>
-                <a class="nav-a mdq-767" href="#">افزودن crm</a>
-                <a class="nav-a mdq-767" href="#">جستوجوی crm</a>
+                <a class="nav-a mdq-767" href="@Url.Action("addcrm")"  >افزودن crm</a>
+                <a class="nav-a mdq-767" href="@Url.Action("serchcrm")">جستوجوی crm</a>
                 <a class="nav-a mdq-767" href="#">افزودن انبار</a>
                 <a class="nav-a s @RenderSection("seting", required: false) " href="@Url.Action("seting")"><i class="icon-settings"></i>  تنظیمات</a>
                 <a class="nav-a e @RenderSection("exit", required: false) " href="@Url.Action("logout")"><i class="icon ion-android-exit"></i>  خروج</a>
-
+                
                
         </div>
     </nav>
