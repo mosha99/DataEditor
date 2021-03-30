@@ -52,14 +52,14 @@
     width: auto;
 }
     #filter{
-        position:relative;
-        cursor:pointer;
+        /*position:relative;
+        cursor:pointer;*/
     }
     #Dfilter {
       position: fixed;
       /*bottom: -60px;*/
       direction: rtl;
-      background-color: rgb(44,62,80);
+      /*background-color: rgb(44,62,80);*/
       padding: 10px;
     }
     
@@ -78,29 +78,56 @@
         align-items:center;
         z-index:6;
     }
-    #selectf{
-        position:fixed;
-        top:0;
-        bottom:0;
-        left:0;
-        right:0;
-        z-index:7;
+        #selectf {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 7;
+        }
+        #Dfilter {
+            position: relative;
+            z-index: 8;
+        }
+        #mainNav {
+            z-index: 5;
+        }
+        .form-inline {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+            -ms-flex-align: center;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 7px;
+            margin-top: 20px;
+        }
+        .div-c{
+            padding:0;
+        }
+        .custom-control-input:checked ~ .custom-control-label:before {
+            color: #fff;
+            border-color: #374859;
+            background-color: #374859;
+        }
+        .footer-dark {
+            display: none;
+        }
+        #filter {
+            position: relative;
+            z-index: 2;
+        }
+    .btn-primary {
+        background-color: #374859;
+        border-color: #18bc9c;
     }
-    #Dfilter{
-        position:relative;
-        z-index:8;
-    }
-    #mainNav {
-    z-index: 5;
-}
     </style>
 }
 @*@section list{disabled}*@
-@section navitem{
-    <a class="nav-a l " id="filter"><i class="fa fa-filter filtr"></i>  لیست کالاها</a>
-}
-<div id="dcf">
-    <div id="selectf"></div>
+
+<div id="filter">
     <div class="" id="Dfilter" style="">
         <form class="form-inline" action="@Url.Action("list")">
             <select class="form-control ff" name="store1">
@@ -138,10 +165,10 @@
                 <tr>
                     <th>موجودی</th>
                     <th>قیمت&nbsp;</th>
-                    <th class="dfg">نام انبار</th>
+                    <th >نام انبار</th>
                     <th>کد انبار</th>
                     <th>نام کالا</th>
-                    <th class="dfg">کد کالا</th>
+                    <th >کد کالا</th>
                 </tr>
             </thead>
             <tbody>
@@ -150,10 +177,10 @@
                     <tr>
                         <td>@item.Amount</td>
                         <td>@item.SalePrice</td>
-                        <td class="dfg">@item.name_store</td>
+                        <td >@item.name_store</td>
                         <td>@item.id_store</td>
                         <td>@item.NAME</td>
-                        <td class="dfg">@item.id</td>
+                        <td >@item.id</td>
                     </tr>
                 }
 

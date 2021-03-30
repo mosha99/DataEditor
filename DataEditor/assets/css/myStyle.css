@@ -189,7 +189,28 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
         display:none;
     }
 }
-
+@media (max-width: 500px) {
+    .footer-dark { 
+        display:none ;
+    }
+}
+@media (max-width: 468px) {
+    .pagination { 
+       justify-content: start !important;
+    }
+}
+@media (max-width: 600px) {
+    .scroll-to-top {
+        margin-bottom: 50px;
+    }
+}
+.scroll-to-top {
+    left: 1rem;
+    right: auto;
+}
+div#Paging {
+    overflow-x: auto;
+}
 @media only screen and (min-width: 992px) {
     .mdq-767{
         display:none;

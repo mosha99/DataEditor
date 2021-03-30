@@ -58,12 +58,13 @@ namespace DataEditor.myClass
         }
         public static bool add(crm Crm,string path)
         {
+            int id = 0;
             try
             {
                 var db=dbcrm.CRM_Customer.OrderBy(x => x.id).ToList();
                 var ob = new CRM_Customer();
-
                 ob.id = db.Last().id + 1;
+                id = ob.id;
                 ob.NAME = Crm.Name;
                 ob.MOBIL = Crm.Number;
                 ob.CodeMelli = Crm.NationalCode;
@@ -81,6 +82,7 @@ namespace DataEditor.myClass
 
                 catch (Exception error)
             {
+                dbcrm.CRM_Customer.Remove(dbcrm.CRM_Customer.FirstOrDefault(x=>x.id==id));
                 errors.LogError(error, path);
                 return false;
             }

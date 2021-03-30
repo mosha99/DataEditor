@@ -19,7 +19,7 @@ namespace DataEditor.Models
         [Required(ErrorMessage ="این فیلد اجباری است")]
         [MaxLength(11,ErrorMessage ="شماره معتبر وارد نمایید")]
         [MinLength(11,ErrorMessage = "شماره معتبر وارد نمایید")]
-        [RegularExpression("^([0-9]){11}$", ErrorMessage = "شماره معتبر وارد نمایید")]
+        [RegularExpression("^([0-9۰-۹]){11}$", ErrorMessage = "شماره معتبر وارد نمایید")]
         public string Number { get; set; }
 
 
@@ -27,7 +27,7 @@ namespace DataEditor.Models
         [Required(ErrorMessage ="این فیلد اجباری است")]
         [MaxLength(10, ErrorMessage = "کد ملی معتبر وارد نمایید")]
         [MinLength(10, ErrorMessage = "کد ملی معتبر وارد نمایید")]
-        [RegularExpression("^([0-9]){10}$", ErrorMessage ="کد ملی معتبر وارد نمایید")]
+        [RegularExpression("^([0-9۰-۹]){10}$", ErrorMessage ="کد ملی معتبر وارد نمایید")]
         public string NationalCode { get; set; }
     }
 }
